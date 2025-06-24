@@ -1,4 +1,4 @@
-title: Declarations
+﻿title: Declarations
 ---
 <<declare $test = true>>
 <<declare $charName = "Goldie">>
@@ -11,24 +11,20 @@ title: Declarations
 ===
 title: Start
 ---
-It's the end of your shift, and you see Remy sitting at one of the tables of your shop.
-The rest of the customers are all gone. 
-After changing the store sign to closed, you grab some coffee and pastries for the two of you, and head to his table.
+<<wait 3>>
+It's the end of your shift, and you see Remy sitting at one of the tables of your shop. #line:narrator-01
+The rest of the customers are all gone. #line:narrator-02
+After changing the store sign to closed, you grab some coffee and pastries for the two of you, and head to his table.#line:narrator-03
 <<EnterRemy SceneManager>>
-Remy: I know you've been working here all day, Marigold, so I appreciate you willing to meet me at your shop.
-Goldie: It's no problem! Honestly, I really love it here.
-Goldie: I’m literally doing all the things I wanted to do in life. I get to run a florist-slash-bakery-slash-bookstore-slash-coffeeshop- slash bobacafe apothecary.
-Remy: An Apothecary too?
-Goldie: That’s just for aesthetics. Nobody needs any medicine in the afterlife
+Remy: I know you've been working here all day, Marigold, so I appreciate you willing to meet me at your shop.#line:remy-01
+Goldie: It's no problem! Honestly, I really love it here.#line:goldie-01
+Goldie: I’m literally doing all the things I wanted to do in life. I get to run a florist-slash-bakery-slash-bookstore-slash-coffeeshop- slash bobacafe apothecary.#line:goldie-02
+Remy: An Apothecary too?#line:remy-02
+Goldie: That’s just for aesthetics. Nobody needs any medicine in the afterlife #line:goldie-03
 <<RemySmile SceneManager>>
-Remy: *chuckles* Kinda late for that, I suppose.
-Goldie: *laughs* Yeah!
-<<RemySmirk SceneManager>>
-Remy: *smiles and takes a sip of his coffee*
--> So… I’m guessing you dont really like your job?
- <<jump JobPath>>
--> You know, that's the signature brew of the shop!
- <<jump CoffeeDog>>
+Remy: *chuckles* Kinda late for that, I suppose. #line:remy-03
+Goldie: *laughs* Yeah!#line:goldie-04
+And they live happily ever after. The End~
 ===
 title:JobPath
 ---
