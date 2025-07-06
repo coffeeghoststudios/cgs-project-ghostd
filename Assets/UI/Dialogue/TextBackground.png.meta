@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0dee93ca38f163e43a3cf5e987434d54
+guid: 51dcbd17aea260648ac6d86fdab2352b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -110,22 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_1090_0
+      name: TextBackground_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 315
-        width: 2732
-        height: 1544
+        x: 326
+        y: 305
+        width: 2624
+        height: 693
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 408, y: 211, z: 157, w: 218}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d139d6b3d46b80643a8da3433c35352e
-      internalID: 618615448
+      spriteID: c3f1a6cf4938d0140a11702da60b51ce
+      internalID: 1631841362
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_1090_0: 618615448
+      TextBackground_0: 1631841362
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
