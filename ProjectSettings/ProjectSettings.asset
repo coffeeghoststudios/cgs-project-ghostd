@@ -803,11 +803,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1de2af18-d5ff-41dc-9d98-9e9872f05728
+  cloudProjectId: 586a40ac-273a-4182-a8ea-c166e2d85849
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: cgs-project-ghostd
-  organizationId: hey_adora20
+  organizationId: unity_364328a814fbc1ff4eb0
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
