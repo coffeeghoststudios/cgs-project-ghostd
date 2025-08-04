@@ -5,8 +5,8 @@ using System;
 
 
 
-[CreateAssetMenu(fileName = "LocationSO", menuName = "ScriptableObjects/LocationSO", order = 0)]
-public class LocationSO : ScriptableObject
+[CreateAssetMenu(fileName = "LocationListSO", menuName = "ScriptableObjects/LocationListSO", order = 0)]
+public class LocationListSO : ScriptableObject
 {
     public List<Location> locations = new List<Location>();
     public Location currentLocation;
@@ -18,15 +18,14 @@ public class LocationSO : ScriptableObject
     }
     public void SetCurrentLocationByType(LocationType type)
     {
-        currentLocation = locations.Find(location => location.type == type);
-        Debug.Log("New location is set " + currentLocation);
+       Location newLocation = locations.Find(location => location.type == type);
+       if (newLocation != null) currentLocation = newLocation;
     }
 
     public void SetCurrentLocationByName(string name)
     {
-       Debug.Log("Location Type for living room => "+LocationType.LivingRoom); 
-       currentLocation = locations.Find(location => location.type.ToString() == name); // TODO: Error Handling if location is not found
-       Debug.Log("New location is set " + currentLocation);
+       Location newLocation = locations.Find(location => Enum.GetName(typeof(LocationType), location.type) == name); // TODO: Error Handling if location is not found
+       if (newLocation != null) currentLocation = newLocation;
     }
 
     public void ResetLocationSO()
@@ -47,6 +46,6 @@ public enum LocationType
 [Serializable]
 public class Location
 {
-    public LocationType type = LocationType.None;
+    public LocationType type;
     public Sprite sprite;
 }

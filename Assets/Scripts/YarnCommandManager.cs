@@ -10,7 +10,6 @@ public static class YarnCommandManager
     [YarnCommand("LoadBackground")]
     public static void LoadBackground(string name)
     {
-        Debug.Log("Current Type is "+name);
-        GameManager.Instance.locationSO.SetCurrentLocationByName(name); 
+        GameManager.Instance.SetLocationByName(name); 
     }
 }

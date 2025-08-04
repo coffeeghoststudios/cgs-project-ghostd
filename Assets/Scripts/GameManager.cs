@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public LocationSO locationSO;
+    public LocationListSO locationListSO;
+    public CharacterListSO characterListSO;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,25 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        locationSO.ResetLocationSO();
-        
+        locationListSO.ResetLocationSO();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public Location GetCurrentLocation()
     {
-        
+        return locationListSO.currentLocation;
+    }
+
+    public Sprite GetCurrentLocationSprite()
+    {
+        return GetCurrentLocation().sprite;
+    }
+    public LocationType GetCurrentLocationType()
+    {
+        return GetCurrentLocation().type;
+    }
+    public void SetLocationByName(string name)
+    {
+        locationListSO.SetCurrentLocationByName(name);
     }
 }

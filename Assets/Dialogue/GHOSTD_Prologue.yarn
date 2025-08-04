@@ -77,6 +77,7 @@ color: green
 Narrator: You rise from your convalescence. No true sleep, rather a facsimile that spirits like to engage in.
 Narrator: There is something comforting to the formerly human in the pantomime of satisfying the needs of a body they no longer have.
 {$playerName}: *yawn* You know I really thought being a ghost would mean I stop feeling tired
+<<CharacterEnter Malaika>>
 Malaika: Oh you aren’t tired, you’re just bored hun.
 Narrator: This one is Malaika Quartz, your roommate. She is likely a few hundred years older than you, it is hard to know for sure.
 Narrator: She helped to welcome you into the city when you first arrived, and you ended up fast friends.
@@ -94,12 +95,14 @@ Malaika: *Blushing slightly* Oh Sven? No, I haven’t thought about him in forev
   {$playerName}: Alright, well I’ve got to go open the shop.
 {$playerName}: Will you still be here when I get back?
 Malaika: *with a serious expression* You know I can’t promise that. Have a good day at work!
+<<CharacterLeave Malaika>>
 <<jump MeetCute>>
 ===
 title: MeetCute
 position: -44,-217
 color: green
 ---
+<<LoadBackground Cafe>>
 Narrator: You arrive at your little shop precisely on time, as you always do. But that may be more because time is less “sequential” here than it is on Earth. 
 Narrator: Since there are no needs to be met among the dead, when you choose to live in Chthonia and choose to have a job, it is not because you require money for food or rent.
 Narrator: Instead most ghosts do a job because they find it fulfilling.
@@ -120,13 +123,16 @@ Customer 2: *Inhales deeply* These almost smell alive! That’s remarkable! … 
  -> Answer hiim
   {$playerName}: It's {$playerName}, and I'm glad you like them! Feel free to come back at any time you need a coffee or pastries... 
   {$playerName}: ... or a book or medicine or tea or just another bouquet of flowers.
+  <<CharacterEnter Remy>>
   Customer 2: {$playerName}... that's a nice name. It suits you.
   Customer 2: It was nice meeting you
   *Customer 2 leaves*
+  <<CharacterLeave Remy>>
  -> He’s flirting with you right? Flirt back!
   <<set $affectionMeter +=2>>
   <<set $meetCuteFlirt to true>>
   {$playerName}: Oh a smooth one are you? {$playerName}, and it is nice to meet you. Now I believe it’s your turn.
+  <<CharacterEnter Remy>>
   Customer 2: *he smirks* I go by Remy. 
   Remy: *leaning in a little* You know, I must have been down this street a thousand times, and I don’t think I’ve ever seen your shop before. Is it new?
   {$playerName}: Oh they were doing a lot of remodelling in the old Elysium district so I moved the shop to the city’s edge. You live nearby?
@@ -143,11 +149,13 @@ Customer 2: *Inhales deeply* These almost smell alive! That’s remarkable! … 
     *Remy leaves*
    -> Don't Wink
     *Remy smiles at you as he leaves*
+  <<CharacterLeave Remy>>
 Customer 3: Do you have any compies of "Die, Laugh, Love" in the bookstore?
 {$playerName}: I'm pretty syre i do, let me check
 // inset a list of punny books themed around death, and you mus select the correct one #meta
 {$playerName}: Got it right here
 Customer 3: Thanks, {$playerName}! I don’t know what I’d do without this place.
+<<LoadBackground Chthonia>>
 <<if $meetCuteFlirt is true>> 
  Narrator: And so it goes for the next several hours. But who was that handsome customer?
  Narrator: The one who wanted flowers. For some reason you can’t put your finger on, he seemed familiar...
@@ -161,6 +169,8 @@ title: AppIntro
 position: -46,-71
 color: green
 ---
+<<LoadBackground LivingRoom>>
+<<CharacterEnter Malaika>>
 Malaika: {$playerName}! Hey, Bestie! I’ve done it.
 {$playerName}: *unnerved* Okay, shoot? What've you got for me?
 Malaika: I signed you up for Ghost
@@ -208,6 +218,7 @@ Malaika: Seems so. Again, you got kinda lucky with this first prophecy, usually 
 Malaika: See the second couplet, that’s saying you should tell him about your coffee… Or maybe the tea? 
 Malaika: Whichever one you consider to be your “prowess.” These Prophecies can get nebulous pretty fast.
 {$playerName}: Well, here goes I guess.
+<<CharacterLeave Malaika>>
 <<jump FirstDatePlan>>
 ===
 title: FirstDatePlan
