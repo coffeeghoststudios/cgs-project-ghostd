@@ -8,9 +8,7 @@ using System;
 public class Scene01Events : MonoBehaviour
 {
     public GameObject fadeScreenIn;
-    // public GameObject charKasumi;
-    // public GameObject charHaruka;
-    // public GameObject leftCharParent;
+
 
     public GameObject RemyNeutral;
     public GameObject RemySmile;
@@ -85,13 +83,6 @@ public class Scene01Events : MonoBehaviour
     IEnumerator EventStarter(){
         yield return new WaitForSeconds(2);
         fadeScreenIn.SetActive(false);
-        // charKasumi.SetActive(true);
-        // gasp.Play();
-        // yield return new WaitForSeconds(2);
-        // // Text functionality
-        // yield return new WaitForSeconds(2);
-        // charHaruka.SetActive(true);
-        // sigh.Play();
 
     }
 

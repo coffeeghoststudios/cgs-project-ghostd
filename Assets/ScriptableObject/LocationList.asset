@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29da182b79b7b3a4d90100c7b668ae33, type: 3}
+  m_Name: LocationList
+  m_EditorClassIdentifier: 
+  locations:
+  - type: 1
+    sprite: {fileID: 21300000, guid: d7c730217fb7a6c4b9da996c8b48e731, type: 3}
+  - type: 1
+    sprite: {fileID: 21300000, guid: d7c730217fb7a6c4b9da996c8b48e731, type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: b8a0df0f24ad6df4f8c1020bef736fde, type: 3}
+  currentLocation:
+    type: 1
+    sprite: {fileID: 21300000, guid: d7c730217fb7a6c4b9da996c8b48e731, type: 3}

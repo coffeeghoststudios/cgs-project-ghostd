@@ -1,0 +1,251 @@
+title: Declarations
+position: -259,-350
+---
+<<declare $affectionMeter = 5>>
+<<declare $genderObject = "them">>
+<<declare $genderSubject = "They">>
+<<declare $meetCuteFlirt = false>>
+<<declare $playerName = "You">>
+<<declare $prototypeVersion = true>>
+<<declare $UmbralwortOwned = false>>
+===
+title: Start
+position: -263,-213
+---
+Narrator: Chthonia,  An infinite city that defies the mortal conceptions of space and time. 
+Narrator: Every day untold billions of ghosts, ghouls, spirits, and stranger beings besides, go about their daily routines with a vigor some of them barely knew in life.
+Narrator: A place where it's denizens need not sleep or eat; where no one can get sick, wehre no one can get sick.
+Narrator: Money for one, does not exist here. After all, you can’t take it with you.
+Narrator: And then there’s you, a lost soul unaware of what machinations the loom of fate has spun for you...
+Narrator: Ah, it looks like you’re up. Let’s go see who you are shall we?
+<<jump PickName>>
+===
+title: PickName
+position: -263,-83
+---
+What is your name?
+-> Jamie
+ <<set $playerName to "Jamie">>
+-> Kai
+ <<set $playerName to "Kai">>
+Your name is {$playerName}?
+ -> Yes
+  <<jump PickPronouns>>
+ -> No
+  <<jump PickName>>
+===
+title: PickPronouns
+position: -263,54
+---
+What are your closest pronouns?
+ -> She/Her
+  <<set $genderSubject to "She">>
+  <<set $genderObject to "her">>
+  Your closest pronouns are {$genderSubject}/{$genderObject}?
+   -> Yes
+    <<jump Prologue>>
+   -> No
+    <<jump PickPronouns>>
+   -> Actually, I want to change my name. Let's start over.
+    <<jump PickName>>
+ -> They/Them
+   <<set $genderSubject to "They">>
+   <<set $genderObject to "them">>
+   Your closest pronouns are {$genderSubject}/{$genderObject}?
+    -> Yes
+     <<jump Prologue>>
+    -> No
+     <<jump PickPronouns>>
+    -> Actually, I want to change my name. Let's start over.
+     <<jump PickName>>
+ -> He/Him
+  <<set $genderSubject to "He">>
+  <<set $genderObject to "him">>
+  Your closest pronouns are {$genderSubject}/{$genderObject}?
+   -> Yes
+    <<jump Prologue>>
+   -> No 
+    <<jump PickPronouns>>
+   -> Actually, I want to change my name. Let's start over.
+    <<jump PickName>>
+===
+title: Prologue
+position: -43,-352
+color: green
+---
+<<LoadBackground LivingRoom>>
+Narrator: You rise from your convalescence. No true sleep, rather a facsimile that spirits like to engage in.
+Narrator: There is something comforting to the formerly human in the pantomime of satisfying the needs of a body they no longer have.
+{$playerName}: *yawn* You know I really thought being a ghost would mean I stop feeling tired
+Malaika: Oh you aren’t tired, you’re just bored hun.
+Narrator: This one is Malaika Quartz, your roommate. She is likely a few hundred years older than you, it is hard to know for sure.
+Narrator: She helped to welcome you into the city when you first arrived, and you ended up fast friends.
+Malaika: I hear Odin’s setting up another big war game up in Valhalla, you wanna get out for a bit?  
+Malaika: We’ll have a big adventure, stab some guys, maybe even go out for drinks with them after. *she waggles her eyebrows suggestively*
+{$playerName}: No I’m good. I’m not in the mood to get shouted at for a week by large axe wielding men.
+Malaika: *Shrugs* To each their own. You’ll have the apartment to yourself this weekend then.
+Malaika: Because I intend to stab the biggest viking I can find, I’m pretty sure that’s how they flirt.
+{$playerName}: You’re talking about Sven?
+Malaika: *Blushing slightly* Oh Sven? No, I haven’t thought about him in forever.
+ -> Tease her about Sven
+  {$playerName}: Mmhmm. Gotcha. Totally not thinking about your… what did you call him? Your “Viking Teddy Bear.”
+  Malaika: Oh would you look at the time! You have to get to work! You can’t be late again, what would the customers think!
+ -> Let it go
+  {$playerName}: Alright, well I’ve got to go open the shop.
+{$playerName}: Will you still be here when I get back?
+Malaika: *with a serious expression* You know I can’t promise that. Have a good day at work!
+<<jump MeetCute>>
+===
+title: MeetCute
+position: -44,-217
+color: green
+---
+Narrator: You arrive at your little shop precisely on time, as you always do. But that may be more because time is less “sequential” here than it is on Earth. 
+Narrator: Since there are no needs to be met among the dead, when you choose to live in Chthonia and choose to have a job, it is not because you require money for food or rent.
+Narrator: Instead most ghosts do a job because they find it fulfilling.
+Customer 1: Hey there PLAYER. Could I get a tall skeletano and a cat’s skull biscuit?
+{$playerName}: Coming right up! 
+// META: Insert a minigame here where you are given a menu of options, and must select the correct order through text #meta
+Customer 1: Thanks PLAYER, I’ll see you tomorrow!
+Customer 2: I’m getting a little dizzy just looking at the menu here. What would you recommend for a first time customer?
+ -> Ask what he wants
+  {$playerName}: Well, that kinda depends, what menu are you most interested in?
+  Customer 2: I was thinking maybe the florist?
+ -> run down the whole list
+  {$playerName}: Well, we have tea, inclding some boba options, coffee, patstries, some small sandwiches...
+  {$playerName}: ... a selection of books, a very aromatic selection of flowers, and a medley of herbal medicines that go quite well with that tea.
+{$playerName}: Interested in flowers? how about a bouquet of Umbrellaworts. They are a gorgeous shade of pink, and since they’re nocturnal bloomers they’ll always be open.
+// we will insert another minigame You must select the correct flower five times from a list of nocturnal flowers, the list shuffles each time. #meta
+Customer 2: *Inhales deeply* These almost smell alive! That’s remarkable! … Pardon me, I don’t believe I caught your name.
+ -> Answer hiim
+  {$playerName}: It's {$playerName}, and I'm glad you like them! Feel free to come back at any time you need a coffee or pastries... 
+  {$playerName}: ... or a book or medicine or tea or just another bouquet of flowers.
+  Customer 2: {$playerName}... that's a nice name. It suits you.
+  Customer 2: It was nice meeting you
+  *Customer 2 leaves*
+ -> He’s flirting with you right? Flirt back!
+  <<set $affectionMeter +=2>>
+  <<set $meetCuteFlirt to true>>
+  {$playerName}: Oh a smooth one are you? {$playerName}, and it is nice to meet you. Now I believe it’s your turn.
+  Customer 2: *he smirks* I go by Remy. 
+  Remy: *leaning in a little* You know, I must have been down this street a thousand times, and I don’t think I’ve ever seen your shop before. Is it new?
+  {$playerName}: Oh they were doing a lot of remodelling in the old Elysium district so I moved the shop to the city’s edge. You live nearby?
+  Remy: Work nearby, actually.
+  {$playerName}: Well then you have no excuse not to come back around.
+   -> Wink at him 
+    <<set $affectionMeter +=3>>
+    Remy: On second thought I don’t know if I can carry all these in one go. Here. 
+    Remy: *smiles and hands you back a flower*
+    Remy: I think I’ll have to come by and pick this one up later.
+    <<set $Umbralwort to true>>
+    *Gift Received. Umbralwort.*
+    Remy: I'll be seeing you, {$playerName}.
+    *Remy leaves*
+   -> Don't Wink
+    *Remy smiles at you as he leaves*
+Customer 3: Do you have any compies of "Die, Laugh, Love" in the bookstore?
+{$playerName}: I'm pretty syre i do, let me check
+// inset a list of punny books themed around death, and you mus select the correct one #meta
+{$playerName}: Got it right here
+Customer 3: Thanks, {$playerName}! I don’t know what I’d do without this place.
+<<if $meetCuteFlirt is true>> 
+ Narrator: And so it goes for the next several hours. But who was that handsome customer?
+ Narrator: The one who wanted flowers. For some reason you can’t put your finger on, he seemed familiar...
+<<else>>
+ Narrator:  And so it goes for the next several hours. But who was that handsome customer? The one who wanted flowers. 
+ Narrator: For some reason you can’t put your finger on, he seemed familiar… 
+<<endif>>
+<<jump AppIntro>>
+===
+title: AppIntro
+position: -46,-71
+color: green
+---
+Malaika: {$playerName}! Hey, Bestie! I’ve done it.
+{$playerName}: *unnerved* Okay, shoot? What've you got for me?
+Malaika: I signed you up for Ghost
+*You hand over your phone. After a brief moment she hands it back*
+// Open the player phone menu and show the Ghostd interface #meta
+Malaika: You’ve already got three suitors, look at the messages here.
+PLAYER: “Suitors?” Sometimes I forget what century you’re from. 
+//Player must click on the Matches tab to continue #meta
+//Show First match: Sobek (he/him) [The crocodile headed egyptian deity of the Nile, male virility, and Pharaonic power] #meta
+Sobek: I’m an old God looking for new worshipers. My hobbies include storytelling, going to the beach, and spending time in the presence of other beautiful people like you ;) 
+Malaika: Well, he certainly seems.. interesting.
+{$playerName}: Yeah, I don't know if I want to be his "worshipper."
+Malaika: eugh.. Yeah, I'm pretty ure I went out with him a couple centuries ago. 
+Malaika: He's hot... but I dont know if I would do it again.
+//Show Second Match: Craig Smith (they/he) [A sort of quintessential 90s office worker type, think Milchick from Severance but more frumpy] #meta
+Craig: I’m a simple ghost who enjoys the simple things in unlife. I love my job, and my home, and I’m looking for someone I can come home to.
+Malaika: Boo. This one’s too “traditional.”
+{$playerName}: you dont know, he could be nice.
+Malaika: Honey, you can do better. Trust me. Next!
+// Show Third Match: Remy (he/him) #meta
+Remy: Looking to meet someone I can connect with. I enjoy spending time at the park, watching movies, and trying out new restaurants. Disclaimer, sometimes I have to travel for work, so if you are seeing this outside of Chthonia I am not from here.
+Malaika: Okay now we’re getting somewhere. He’s fun. He’s up front about his job. This is a green flag if I’ve ever seen one.
+{$playerName}: *Blushes*
+Malaika: Okay now we’re getting somewhere. He’s fun. He’s up front about his job. This is a green flag if I’ve ever seen one.
+{$playerName}: *Blushes harder*
+Malaika: What do you think? PLAYER? Oh I think you like this one.
+{$playerName}: No! It’s just… I know him. He came into my shop today.
+Malaika: Ooooooh. And he matched with you the same day! Girl you have to message him right now.
+{$playerName}: What? No. Wouldn’t that look desperate or something?
+Malaika: I’m so sorry, I did not realize you were helpless. He swiped on you! Now ask this fine spectre out on a date.
+{$playerName}: Okay, so what should I open with?
+Malaika: Here, Ghosted has a “Prophecy” option. They have Datevinators for people like you who don’t know how to flirt. 
+// Show Prophecy Screen. #meta
+Malaika: The advice the Prophecies give you is guaranteed to make your dates more successful… so long as you can interpret them. Here, just click on his picture and then hit Prophecy.
+//Player selects the Prophecy #meta
+{$playerName}: Bid your date come meet you near. Thine province that thou holdest dear. Offer forth thou drinks of spice. Thine prowess shall break the ice.
+Malaika: Lucky pull! You got an easy one. This is just saying you should invite him to your shop.
+{$playerName}: And you said this advice is guaranteed?
+Malaika: Absolutely! My first roommate when I arrived here was a Datevinator. 
+Malaika: I was pretty skeptical about the whole “divination for dates” thing at first, so she offered to wingman for me as proof. 
+Malaika: And, well… let’s just say that I’m a believer now. In fact I think she actually works for Ghostd these days… maybe I should look her up.
+{$playerName}: Alright let’s say for the sake of argument that I accept Datevination as a real thing. I’ve certainly seen weirder stuff here. 
+{$playerName}: So what, I just… ask him to meet up at the shop?
+Malaika: Seems so. Again, you got kinda lucky with this first prophecy, usually they are much harder to figure out than this. 
+Malaika: See the second couplet, that’s saying you should tell him about your coffee… Or maybe the tea? 
+Malaika: Whichever one you consider to be your “prowess.” These Prophecies can get nebulous pretty fast.
+{$playerName}: Well, here goes I guess.
+<<jump FirstDatePlan>>
+===
+title: FirstDatePlan
+position: -35,65
+color: green
+---
+//Player pulls up the messaging app, or calls Remy or whatever we plan to do for this moment.(maybe the messaging is within the app instead of the phone. The characters are testing in this moment.) #meta
+{$playerName}: Hey, so I’m glad we matched. Would you want to meet up at Wake the Dead tomorrow?
+Remy: Sure thing! But why there?
+ -> Admit you used a prophecy
+  <<set $affectionMeter -=5>>
+  {$playerName}: Well, and this is kind of embarrassing, I maaaay have used the Datevination feature on here. 
+  {$playerName}: And it suggested we meet up over “drinks of spice” in the “province I hold dear” so…
+  //Remy looks awkwards
+  Remy: Well who am I to argue with fate, I guess? Sure I can meet you there. #RemyUncomfortable
+ -> Tell him you have tea
+  <<set $affectionMeter +=5>>
+  {$playerName}: Well I have a bunch of teas to try out there, I just got one in that’s supposedly made with real nightshade we could try out.
+  Remy: That does sound fascinating actually. I will have to try it out.
+ -> Tell him you make the best coffee
+  <<set $affectionMeter +=10>>
+  {$playerName}: Because I make a killer cup of coffee. 
+  {$playerName}: I decided to spend my afterlife running the sort of shop I always dreamed of before I got here. And it just so happens to be the sort of place I would bring someone I liked.
+  Remy: Uh-oh, we’re already at “like”? I dunno, we might be moving a little fast here ;> #winkemoji
+  Remy: Seriously though I would love to, I will see you there.
+{$playerName}: If you don’t mind me asking, why did you want to know?
+Remy: I guess I just found it odd wanting to bring someone to where you work.
+{$playerName}: Oh really? I thought that would be more common here in Chthonia where everyone gets to kind of make up what they want to do.
+Remy: Not everyone gets it right I’ve found, sometimes you think you know how you’re going to spend eternity and suddenly you’re just as miserable here as you were before. 
+Remy: But it sounds like you really nailed it. What time do you want to meet up?
+{$playerName}: I close up in the early afternoon, so around then? We’ll have the place to ourselves and I can make you anything off the menu before I clean all the machines.
+Remy: I can do that. I have to do something in the morning, so depending on how I navigate the flux I may be a bit late or a bit early. But I promise I’ll be there.
+ -> Flirt a Little more
+  <<set $affectionMeter +=1>>
+  {$playerName}: Alright, but if you leave me waiting you’ll need to make it up to me ;> #winkemoji
+  Remy: haha! Noted :>
+ -> You'll see him tomorrow
+  {$playerName}: I'll hold you to that. See you tomorrow!
+Narrator: Well that went about as well as could be hoped. 
+Narrator: For now you take your convalescent slumber with a peaceful smile, for on the morrow you have secured a first date. Good luck.
+=== 
