@@ -8,19 +8,22 @@ public class PhoneManager : MonoBehaviour
 
     public List<GameObject> screens = new List<GameObject>();
     public GameObject DialogScreen;
-    
+    public Animator anim;
 
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            bool isHidden = anim.GetBool("isHidden");
+            anim.SetBool("isHidden", !isHidden);
+        }
     }
-
+    
     public void LoadScreen(string name)
     {
         screens.ForEach(screen =>
@@ -34,11 +37,11 @@ public class PhoneManager : MonoBehaviour
                 screen.SetActive(false);
             }
 
-            if(name == "Game") DialogScreen.SetActive(true);
-            
-           
-           Debug.Log("Game object name "+ screen.name);
-        } );
+            if (name == "Game") DialogScreen.SetActive(true);
+
+
+            Debug.Log("Game object name " + screen.name);
+        });
 
     }
 }
