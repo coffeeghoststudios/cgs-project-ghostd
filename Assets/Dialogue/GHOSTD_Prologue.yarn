@@ -8,6 +8,11 @@ position: -259,-350
 <<declare $playerName = "You">>
 <<declare $prototypeVersion = true>>
 <<declare $UmbralwortOwned = false>>
+<<declare $lockPhone = false>>
+<<declare $enablePhone = false>>
+<<declare $TutorialGhostdHome = true>>
+<<declare $TutorialGhostdProfile = true>>
+<<declare $TutorialGhostdProphecy = true>>
 ===
 title: Start
 position: -263,-213
@@ -18,7 +23,7 @@ Narrator: A place where it's denizens need not sleep or eat; where no one can ge
 Narrator: Money for one, does not exist here. After all, you can’t take it with you.
 Narrator: And then there’s you, a lost soul unaware of what machinations the loom of fate has spun for you...
 Narrator: Ah, it looks like you’re up. Let’s go see who you are shall we?
-<<jump PickName>>
+<<jump AppIntro>>
 ===
 title: PickName
 position: -263,-83
@@ -175,10 +180,13 @@ Malaika: {$playerName}! Hey, Bestie! I’ve done it.
 {$playerName}: *unnerved* Okay, shoot? What've you got for me?
 Malaika: I signed you up for Ghost
 *You hand over your phone. After a brief moment she hands it back*
-// Open the player phone menu and show the Ghostd interface #meta
+<<set $lockPhone to true>>
+Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App
 Malaika: You’ve already got three suitors, look at the messages here.
-PLAYER: “Suitors?” Sometimes I forget what century you’re from. 
-//Player must click on the Matches tab to continue #meta
+PLAYER: “Suitors?” Sometimes I forget what century you’re from.
+Player must click on the Matches tab to continue
+<<PhoneToForeground PhoneManager>> 
+Player must click on the Matches tab to continue
 //Show First match: Sobek (he/him) [The crocodile headed egyptian deity of the Nile, male virility, and Pharaonic power] #meta
 Sobek: I’m an old God looking for new worshipers. My hobbies include storytelling, going to the beach, and spending time in the presence of other beautiful people like you ;) 
 Malaika: Well, he certainly seems.. interesting.
@@ -203,7 +211,7 @@ Malaika: Ooooooh. And he matched with you the same day! Girl you have to message
 Malaika: I’m so sorry, I did not realize you were helpless. He swiped on you! Now ask this fine spectre out on a date.
 {$playerName}: Okay, so what should I open with?
 Malaika: Here, Ghosted has a “Prophecy” option. They have Datevinators for people like you who don’t know how to flirt. 
-// Show Prophecy Screen. #meta
+<<LoadPhoneScreen PhoneManager "Prophecies Screen">>
 Malaika: The advice the Prophecies give you is guaranteed to make your dates more successful… so long as you can interpret them. Here, just click on his picture and then hit Prophecy.
 //Player selects the Prophecy #meta
 {$playerName}: Bid your date come meet you near. Thine province that thou holdest dear. Offer forth thou drinks of spice. Thine prowess shall break the ice.

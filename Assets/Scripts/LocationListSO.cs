@@ -24,7 +24,8 @@ public class LocationListSO : ScriptableObject
 
     public void SetCurrentLocationByName(string name)
     {
-       Location newLocation = locations.Find(location => Enum.GetName(typeof(LocationType), location.type) == name); // TODO: Error Handling if location is not found
+       Location newLocation = locations.Find(location => Enum.GetName(typeof(LocationType), location.type) == name); 
+       Debug.Log("Method => SetCurrentLocationByName => New Location => "+newLocation.type);
        if (newLocation != null) currentLocation = newLocation;
     }
 

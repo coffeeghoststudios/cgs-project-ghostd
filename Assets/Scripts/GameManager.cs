@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetLocationByName(string name)
     {
+        Debug.Log("Method => SetLocationByName => name => "+name);
         locationListSO.SetCurrentLocationByName(name);
     }
 }
