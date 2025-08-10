@@ -8,11 +8,13 @@ position: -259,-350
 <<declare $playerName = "You">>
 <<declare $prototypeVersion = true>>
 <<declare $UmbralwortOwned = false>>
-<<declare $lockPhone = false>>
 <<declare $enablePhone = false>>
+<<declare $phoneInteractable = false>>
 <<declare $TutorialGhostdHome = true>>
 <<declare $TutorialGhostdProfile = true>>
 <<declare $TutorialGhostdProphecy = true>>
+<<declare $hideDialogueContinue = false>>
+
 ===
 title: Start
 position: -263,-213
@@ -23,7 +25,7 @@ Narrator: A place where it's denizens need not sleep or eat; where no one can ge
 Narrator: Money for one, does not exist here. After all, you can’t take it with you.
 Narrator: And then there’s you, a lost soul unaware of what machinations the loom of fate has spun for you...
 Narrator: Ah, it looks like you’re up. Let’s go see who you are shall we?
-<<jump AppIntro>>
+<<jump PickName>>
 ===
 title: PickName
 position: -263,-83
@@ -180,12 +182,15 @@ Malaika: {$playerName}! Hey, Bestie! I’ve done it.
 {$playerName}: *unnerved* Okay, shoot? What've you got for me?
 Malaika: I signed you up for Ghost
 *You hand over your phone. After a brief moment she hands it back*
-<<set $lockPhone to true>>
-Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App
+<<set $enablePhone to true>>
+<<set $phoneInteractable to true>>
+<<set $hideDialogueContinue to true>>
+Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App 
+<<set $hideDialogueContinue to false>>
+<<set $enablePhone to false>>
 Malaika: You’ve already got three suitors, look at the messages here.
 PLAYER: “Suitors?” Sometimes I forget what century you’re from.
-Player must click on the Matches tab to continue
-<<PhoneToForeground PhoneManager>> 
+<<TransitionPhoneToForeground PhoneManager>>
 Player must click on the Matches tab to continue
 //Show First match: Sobek (he/him) [The crocodile headed egyptian deity of the Nile, male virility, and Pharaonic power] #meta
 Sobek: I’m an old God looking for new worshipers. My hobbies include storytelling, going to the beach, and spending time in the presence of other beautiful people like you ;) 
@@ -227,6 +232,7 @@ Malaika: See the second couplet, that’s saying you should tell him about your 
 Malaika: Whichever one you consider to be your “prowess.” These Prophecies can get nebulous pretty fast.
 {$playerName}: Well, here goes I guess.
 <<CharacterLeave Malaika>>
+<<HidePhone PhoneManager>>
 <<jump FirstDatePlan>>
 ===
 title: FirstDatePlan
@@ -234,37 +240,37 @@ position: -35,65
 color: green
 ---
 //Player pulls up the messaging app, or calls Remy or whatever we plan to do for this moment.(maybe the messaging is within the app instead of the phone. The characters are testing in this moment.) #meta
-{$playerName}: Hey, so I’m glad we matched. Would you want to meet up at Wake the Dead tomorrow?
-Remy: Sure thing! But why there?
+{$playerName} Texting: Hey, so I’m glad we matched. Would you want to meet up at Wake the Dead tomorrow?
+Remy Texting: Sure thing! But why there?
  -> Admit you used a prophecy
   <<set $affectionMeter -=5>>
-  {$playerName}: Well, and this is kind of embarrassing, I maaaay have used the Datevination feature on here. 
-  {$playerName}: And it suggested we meet up over “drinks of spice” in the “province I hold dear” so…
+  {$playerName} Texting: Well, and this is kind of embarrassing, I maaaay have used the Datevination feature on here. 
+  {$playerName} Texting: And it suggested we meet up over “drinks of spice” in the “province I hold dear” so…
   //Remy looks awkwards
-  Remy: Well who am I to argue with fate, I guess? Sure I can meet you there. #RemyUncomfortable
+  Remy Texting: Well who am I to argue with fate, I guess? Sure I can meet you there. #RemyUncomfortable
  -> Tell him you have tea
   <<set $affectionMeter +=5>>
-  {$playerName}: Well I have a bunch of teas to try out there, I just got one in that’s supposedly made with real nightshade we could try out.
-  Remy: That does sound fascinating actually. I will have to try it out.
+  {$playerName} Texting: Well I have a bunch of teas to try out there, I just got one in that’s supposedly made with real nightshade we could try out.
+  Remy Texting: That does sound fascinating actually. I will have to try it out.
  -> Tell him you make the best coffee
   <<set $affectionMeter +=10>>
-  {$playerName}: Because I make a killer cup of coffee. 
-  {$playerName}: I decided to spend my afterlife running the sort of shop I always dreamed of before I got here. And it just so happens to be the sort of place I would bring someone I liked.
-  Remy: Uh-oh, we’re already at “like”? I dunno, we might be moving a little fast here ;> #winkemoji
-  Remy: Seriously though I would love to, I will see you there.
-{$playerName}: If you don’t mind me asking, why did you want to know?
-Remy: I guess I just found it odd wanting to bring someone to where you work.
-{$playerName}: Oh really? I thought that would be more common here in Chthonia where everyone gets to kind of make up what they want to do.
-Remy: Not everyone gets it right I’ve found, sometimes you think you know how you’re going to spend eternity and suddenly you’re just as miserable here as you were before. 
-Remy: But it sounds like you really nailed it. What time do you want to meet up?
-{$playerName}: I close up in the early afternoon, so around then? We’ll have the place to ourselves and I can make you anything off the menu before I clean all the machines.
-Remy: I can do that. I have to do something in the morning, so depending on how I navigate the flux I may be a bit late or a bit early. But I promise I’ll be there.
+  {$playerName} Texting: Because I make a killer cup of coffee. 
+  {$playerName} Texting: I decided to spend my afterlife running the sort of shop I always dreamed of before I got here. And it just so happens to be the sort of place I would bring someone I liked.
+  Remy Texting: Uh-oh, we’re already at “like”? I dunno, we might be moving a little fast here ;> #winkemoji
+  Remy Texting: Seriously though I would love to, I will see you there.
+{$playerName} Texting: If you don’t mind me asking, why did you want to know?
+Remy Texting: I guess I just found it odd wanting to bring someone to where you work.
+{$playerName} Texting: Oh really? I thought that would be more common here in Chthonia where everyone gets to kind of make up what they want to do.
+Remy Texting: Not everyone gets it right I’ve found, sometimes you think you know how you’re going to spend eternity and suddenly you’re just as miserable here as you were before. 
+Remy Texting: But it sounds like you really nailed it. What time do you want to meet up?
+{$playerName} Texting: I close up in the early afternoon, so around then? We’ll have the place to ourselves and I can make you anything off the menu before I clean all the machines.
+Remy Texting: I can do that. I have to do something in the morning, so depending on how I navigate the flux I may be a bit late or a bit early. But I promise I’ll be there.
  -> Flirt a Little more
   <<set $affectionMeter +=1>>
-  {$playerName}: Alright, but if you leave me waiting you’ll need to make it up to me ;> #winkemoji
-  Remy: haha! Noted :>
+  {$playerName} Texting: Alright, but if you leave me waiting you’ll need to make it up to me ;> #winkemoji
+  Remy Texting: haha! Noted :>
  -> You'll see him tomorrow
-  {$playerName}: I'll hold you to that. See you tomorrow!
+  {$playerName} Texting: I'll hold you to that. See you tomorrow!
 Narrator: Well that went about as well as could be hoped. 
 Narrator: For now you take your convalescent slumber with a peaceful smile, for on the morrow you have secured a first date. Good luck.
 === 

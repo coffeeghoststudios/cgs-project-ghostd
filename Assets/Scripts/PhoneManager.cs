@@ -23,20 +23,32 @@ public class PhoneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            runner.VariableStorage.TryGetValue<bool>("$enablePhone", out var enablePhone);
+            if(!enablePhone)return;
             bool isHidden = anim.GetBool("isHidden");
             anim.SetBool("isHidden", !isHidden);
         }
     }
 
+    [YarnCommand("HidePhone")]
+    public void HidePhone()
+    {
+        anim.SetBool("isHidden", true);
+    }
+
     [YarnCommand("PhoneToForeground")]
     public void PhoneToForeground()
     {
+        runner.VariableStorage.SetValue("$hideDialogueContinue", true);
+        runner.VariableStorage.SetValue("$phoneInteractable", true);
         phoneCanvas.sortingOrder=2;
     }
 
     [YarnCommand("PhoneToBackground")]
     public void PhoneToBackground()
     {
+        runner.VariableStorage.SetValue("$hideDialogueContinue", false);
+        runner.VariableStorage.SetValue("$phoneInteractable", false);
         phoneCanvas.sortingOrder=0;
     }
 
@@ -46,10 +58,20 @@ public class PhoneManager : MonoBehaviour
         runner.RequestHurryUpLine();
     }
 
+    [YarnCommand("TransitionPhoneToForeground")]
+    public void TransitionPhoneToForeground()
+    {
+        runner.VariableStorage.SetValue("$hideDialogueContinue", true);
+        this.Invoke(() => PhoneToForeground(), 1.5f);
+    } 
+
     [YarnCommand("LoadPhoneScreen")]
     public void LoadScreen(string name)
     {
-        runner.VariableStorage.TryGetValue<bool>("$lockPhone", out var lockPhone);
+        runner.VariableStorage.TryGetValue<bool>("$phoneInteractable", out var phoneInteractable);
+        if(!phoneInteractable)return;
+
+        
         runner.VariableStorage.TryGetValue<bool>("$TutorialGhostdHome", out var homeScreenTutorial);
         runner.VariableStorage.TryGetValue<bool>("$TutorialGhostdProfile", out var ghostdProfileTutorial);
         runner.VariableStorage.TryGetValue<bool>("$TutorialGhostdProphecy", out var ghostdProphecyTutorial);

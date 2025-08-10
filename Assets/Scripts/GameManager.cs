@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Yarn.Unity;
+
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public LocationListSO locationListSO;
     public CharacterListSO characterListSO;
+    public Button contBtn;
+    public Image contBtnImg;
+    public DialogueRunner runner;
+
 
 
     // Start is called before the first frame update
@@ -25,6 +33,22 @@ public class GameManager : MonoBehaviour
 
         locationListSO.ResetLocationSO();
 
+    }
+
+    private void Update()
+    {
+        runner.VariableStorage.TryGetValue<bool>("$hideDialogueContinue", out var hideContBtn);
+        if (hideContBtn)
+        {
+            contBtn.enabled = false;
+            contBtnImg.enabled = false;
+
+        }
+        else
+        {
+            contBtn.enabled = true;
+            contBtnImg.enabled = true;
+        }
     }
 
     public Location GetCurrentLocation()
