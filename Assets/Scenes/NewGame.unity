@@ -611,23 +611,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792756850}
   m_CullTransparentMesh: 1
---- !u!1 &810364725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4281072943450991488, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
-  m_PrefabInstance: {fileID: 926725995}
-  m_PrefabAsset: {fileID: 0}
---- !u!210 &810364729
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810364725}
-  m_Enabled: 1
-  m_SortingLayerID: 1822228307
-  m_SortingLayer: 2
-  m_SortingOrder: 1
-  m_SortAtRoot: 0
 --- !u!1001 &926725995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,9 +1130,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 391217770}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4281072943450991488, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 810364729}
     - targetCorrespondingSourceObject: {fileID: 2033122831450050258, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1210466517}
@@ -1220,7 +1200,6 @@ GameObject:
   - component: {fileID: 1343351312}
   - component: {fileID: 1343351311}
   - component: {fileID: 1343351310}
-  - component: {fileID: 1343351314}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1311,18 +1290,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!210 &1343351314
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343351309}
-  m_Enabled: 1
-  m_SortingLayerID: -1954235049
-  m_SortingLayer: 3
-  m_SortingOrder: 2
-  m_SortAtRoot: 0
 --- !u!1 &1399953637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9064168568188684091, guid: d9f32e6198b1f0d4db894b768d886ba4, type: 3}

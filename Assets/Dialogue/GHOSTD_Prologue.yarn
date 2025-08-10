@@ -25,7 +25,7 @@ Narrator: A place where it's denizens need not sleep or eat; where no one can ge
 Narrator: Money for one, does not exist here. After all, you can’t take it with you.
 Narrator: And then there’s you, a lost soul unaware of what machinations the loom of fate has spun for you...
 Narrator: Ah, it looks like you’re up. Let’s go see who you are shall we?
-<<jump AppIntro>>
+<<jump PickName>>
 ===
 title: PickName
 position: -263,-83

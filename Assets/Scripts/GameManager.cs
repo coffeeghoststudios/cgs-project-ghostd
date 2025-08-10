@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         else
         {
             contBtn.enabled = true;
+            contBtn.interactable = true;
             contBtnImg.enabled = true;
         }
     }
