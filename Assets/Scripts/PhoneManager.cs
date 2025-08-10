@@ -69,7 +69,7 @@ public class PhoneManager : MonoBehaviour
     public void LoadScreen(string name)
     {
         runner.VariableStorage.TryGetValue<bool>("$phoneInteractable", out var phoneInteractable);
-        if(!phoneInteractable)return;
+        if(!phoneInteractable && name != "Prophecies Screen")return;
 
         
         runner.VariableStorage.TryGetValue<bool>("$TutorialGhostdHome", out var homeScreenTutorial);

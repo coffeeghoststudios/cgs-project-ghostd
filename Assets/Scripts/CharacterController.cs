@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour
     [YarnCommand("CharacterEnter")]
     public void DisplayCharacter()
     {
-        EmoteByType(EmoteType.Neutral);
+        EmoteByType(EmoteType.Enter);
     }
 
     [YarnCommand("CharacterLeave")]
@@ -82,6 +82,7 @@ public enum EmoteType
     Smirk,
     Happy,
     Pout,
+    Enter,
 }
 
 [Serializable]

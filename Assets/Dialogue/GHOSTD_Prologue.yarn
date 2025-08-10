@@ -25,7 +25,7 @@ Narrator: A place where it's denizens need not sleep or eat; where no one can ge
 Narrator: Money for one, does not exist here. After all, you can’t take it with you.
 Narrator: And then there’s you, a lost soul unaware of what machinations the loom of fate has spun for you...
 Narrator: Ah, it looks like you’re up. Let’s go see who you are shall we?
-<<jump PickName>>
+<<jump AppIntro>>
 ===
 title: PickName
 position: -263,-83
@@ -88,19 +88,24 @@ Narrator: There is something comforting to the formerly human in the pantomime o
 Malaika: Oh you aren’t tired, you’re just bored hun.
 Narrator: This one is Malaika Quartz, your roommate. She is likely a few hundred years older than you, it is hard to know for sure.
 Narrator: She helped to welcome you into the city when you first arrived, and you ended up fast friends.
+<<SetEmote Malaika "Happy">>
 Malaika: I hear Odin’s setting up another big war game up in Valhalla, you wanna get out for a bit?  
 Malaika: We’ll have a big adventure, stab some guys, maybe even go out for drinks with them after. *she waggles her eyebrows suggestively*
 {$playerName}: No I’m good. I’m not in the mood to get shouted at for a week by large axe wielding men.
+<<SetEmote Malaika "Neutral">>
 Malaika: *Shrugs* To each their own. You’ll have the apartment to yourself this weekend then.
 Malaika: Because I intend to stab the biggest viking I can find, I’m pretty sure that’s how they flirt.
 {$playerName}: You’re talking about Sven?
+<<SetEmote Malaika "Smirk">>
 Malaika: *Blushing slightly* Oh Sven? No, I haven’t thought about him in forever.
  -> Tease her about Sven
   {$playerName}: Mmhmm. Gotcha. Totally not thinking about your… what did you call him? Your “Viking Teddy Bear.”
+  <<SetEmote Malaika "Neutral">>
   Malaika: Oh would you look at the time! You have to get to work! You can’t be late again, what would the customers think!
  -> Let it go
   {$playerName}: Alright, well I’ve got to go open the shop.
 {$playerName}: Will you still be here when I get back?
+<<SetEmote Malaika "Neutral">>
 Malaika: *with a serious expression* You know I can’t promise that. Have a good day at work!
 <<CharacterLeave Malaika>>
 <<jump MeetCute>>
@@ -120,18 +125,21 @@ Customer 1: Thanks PLAYER, I’ll see you tomorrow!
 Customer 2: I’m getting a little dizzy just looking at the menu here. What would you recommend for a first time customer?
  -> Ask what he wants
   {$playerName}: Well, that kinda depends, what menu are you most interested in?
+  <<CharacterEnter Remy>>
   Customer 2: I was thinking maybe the florist?
  -> run down the whole list
   {$playerName}: Well, we have tea, inclding some boba options, coffee, patstries, some small sandwiches...
   {$playerName}: ... a selection of books, a very aromatic selection of flowers, and a medley of herbal medicines that go quite well with that tea.
 {$playerName}: Interested in flowers? how about a bouquet of Umbrellaworts. They are a gorgeous shade of pink, and since they’re nocturnal bloomers they’ll always be open.
 // we will insert another minigame You must select the correct flower five times from a list of nocturnal flowers, the list shuffles each time. #meta
+<<CharacterEnter Remy>>
 Customer 2: *Inhales deeply* These almost smell alive! That’s remarkable! … Pardon me, I don’t believe I caught your name.
  -> Answer hiim
   {$playerName}: It's {$playerName}, and I'm glad you like them! Feel free to come back at any time you need a coffee or pastries... 
   {$playerName}: ... or a book or medicine or tea or just another bouquet of flowers.
-  <<CharacterEnter Remy>>
+  <<SetEmote Remy "Happy">>
   Customer 2: {$playerName}... that's a nice name. It suits you.
+  <<SetEmote Remy "Smirk">>
   Customer 2: It was nice meeting you
   *Customer 2 leaves*
   <<CharacterLeave Remy>>
@@ -139,19 +147,24 @@ Customer 2: *Inhales deeply* These almost smell alive! That’s remarkable! … 
   <<set $affectionMeter +=2>>
   <<set $meetCuteFlirt to true>>
   {$playerName}: Oh a smooth one are you? {$playerName}, and it is nice to meet you. Now I believe it’s your turn.
-  <<CharacterEnter Remy>>
-  Customer 2: *he smirks* I go by Remy. 
+  <<SetEmote Remy "Smirk">>
+  Customer 2: *he smirks* I go by Remy.
+  <<SetEmote Remy "Happy">> 
   Remy: *leaning in a little* You know, I must have been down this street a thousand times, and I don’t think I’ve ever seen your shop before. Is it new?
   {$playerName}: Oh they were doing a lot of remodelling in the old Elysium district so I moved the shop to the city’s edge. You live nearby?
+  <<SetEmote Remy "Neutral">>
   Remy: Work nearby, actually.
   {$playerName}: Well then you have no excuse not to come back around.
    -> Wink at him 
     <<set $affectionMeter +=3>>
+    <<SetEmote Remy "Smirk">>
     Remy: On second thought I don’t know if I can carry all these in one go. Here. 
     Remy: *smiles and hands you back a flower*
+    <<SetEmote Remy "Happy">>
     Remy: I think I’ll have to come by and pick this one up later.
     <<set $Umbralwort to true>>
     *Gift Received. Umbralwort.*
+    <<SetEmote Remy "Neutral">>
     Remy: I'll be seeing you, {$playerName}.
     *Remy leaves*
    -> Don't Wink
@@ -180,6 +193,7 @@ color: green
 <<CharacterEnter Malaika>>
 Malaika: {$playerName}! Hey, Bestie! I’ve done it.
 {$playerName}: *unnerved* Okay, shoot? What've you got for me?
+<<SetEmote Malaika "Happy">>
 Malaika: I signed you up for Ghost
 *You hand over your phone. After a brief moment she hands it back*
 <<set $enablePhone to true>>
@@ -188,6 +202,7 @@ Malaika: I signed you up for Ghost
 Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App 
 <<set $hideDialogueContinue to false>>
 <<set $enablePhone to false>>
+<<SetEmote Malaika "Neutral">>
 Malaika: You’ve already got three suitors, look at the messages here.
 PLAYER: “Suitors?” Sometimes I forget what century you’re from.
 <<TransitionPhoneToForeground PhoneManager>>
@@ -196,10 +211,12 @@ Player must click on the Matches tab to continue
 Sobek: I’m an old God looking for new worshipers. My hobbies include storytelling, going to the beach, and spending time in the presence of other beautiful people like you ;) 
 Malaika: Well, he certainly seems.. interesting.
 {$playerName}: Yeah, I don't know if I want to be his "worshipper."
+<<SetEmote Malaika "Smirk">>
 Malaika: eugh.. Yeah, I'm pretty ure I went out with him a couple centuries ago. 
 Malaika: He's hot... but I dont know if I would do it again.
 //Show Second Match: Craig Smith (they/he) [A sort of quintessential 90s office worker type, think Milchick from Severance but more frumpy] #meta
 Craig: I’m a simple ghost who enjoys the simple things in unlife. I love my job, and my home, and I’m looking for someone I can come home to.
+<<SetEmote Malaika "Neutral">>
 Malaika: Boo. This one’s too “traditional.”
 {$playerName}: you dont know, he could be nice.
 Malaika: Honey, you can do better. Trust me. Next!
@@ -211,10 +228,12 @@ Malaika: Okay now we’re getting somewhere. He’s fun. He’s up front about h
 {$playerName}: *Blushes harder*
 Malaika: What do you think? PLAYER? Oh I think you like this one.
 {$playerName}: No! It’s just… I know him. He came into my shop today.
+<<SetEmote Malaika "Happy">>
 Malaika: Ooooooh. And he matched with you the same day! Girl you have to message him right now.
 {$playerName}: What? No. Wouldn’t that look desperate or something?
 Malaika: I’m so sorry, I did not realize you were helpless. He swiped on you! Now ask this fine spectre out on a date.
 {$playerName}: Okay, so what should I open with?
+<<SetEmote Malaika Neutral>>
 Malaika: Here, Ghosted has a “Prophecy” option. They have Datevinators for people like you who don’t know how to flirt. 
 <<LoadPhoneScreen PhoneManager "Prophecies Screen">>
 Malaika: The advice the Prophecies give you is guaranteed to make your dates more successful… so long as you can interpret them. Here, just click on his picture and then hit Prophecy.

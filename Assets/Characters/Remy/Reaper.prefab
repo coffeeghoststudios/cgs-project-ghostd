@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1329758133098441688}
   - component: {fileID: 670830863664135975}
   m_Layer: 5
-  m_Name: ReaperNeutrual
+  m_Name: ReaperNeutrualAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,6 +94,78 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &364483972511236909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5523442500062239229}
+  - component: {fileID: 809550554703176145}
+  - component: {fileID: 5598548066044997431}
+  m_Layer: 5
+  m_Name: Neutrual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5523442500062239229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364483972511236909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 11.533946}
+  m_LocalScale: {x: 1.0016985, y: 1.0016985, z: 1.0016985}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2548293700691666582}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 507.2683, y: 59.507355}
+  m_SizeDelta: {x: 861.25, y: 1331.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &809550554703176145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364483972511236909}
+  m_CullTransparentMesh: 1
+--- !u!114 &5598548066044997431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364483972511236909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 0e4a33c02196d664a863635002e1630e, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &5735428463081737063
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +197,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5701417095121382592}
+  - {fileID: 5523442500062239229}
   - {fileID: 3082992316301481940}
   - {fileID: 5775224309564719176}
   - {fileID: 2195897767390012559}
@@ -143,10 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d14b316bbb42440be6dcf6f9d08d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Remy
+  name: 0
   characterEmotes:
   - emote: 0
-    gameObject: {fileID: 48612490817813068}
+    gameObject: {fileID: 364483972511236909}
   - emote: 1
     gameObject: {fileID: 6396107223694894543}
   - emote: 2
@@ -155,6 +228,8 @@ MonoBehaviour:
     gameObject: {fileID: 8550580394429000886}
   - emote: 4
     gameObject: {fileID: 8308226128097717884}
+  - emote: 5
+    gameObject: {fileID: 48612490817813068}
 --- !u!1 &6351954070137202953
 GameObject:
   m_ObjectHideFlags: 0
