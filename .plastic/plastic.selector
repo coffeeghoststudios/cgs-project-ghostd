@@ -1,0 +1,4 @@
+repository "cgs-project-ghostd/cgs-project-ghostd@2475867033326@cloud"
+  path "/"
+    br "/main"
+    co "/main"

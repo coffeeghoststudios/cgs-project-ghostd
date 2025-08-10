@@ -8,9 +8,7 @@ using System;
 public class Scene01Events : MonoBehaviour
 {
     public GameObject fadeScreenIn;
-    // public GameObject charKasumi;
-    // public GameObject charHaruka;
-    // public GameObject leftCharParent;
+
 
     public GameObject RemyNeutral;
     public GameObject RemySmile;
@@ -85,32 +83,9 @@ public class Scene01Events : MonoBehaviour
     IEnumerator EventStarter(){
         yield return new WaitForSeconds(2);
         fadeScreenIn.SetActive(false);
-        // charKasumi.SetActive(true);
-        // gasp.Play();
-        // yield return new WaitForSeconds(2);
-        // // Text functionality
-        // yield return new WaitForSeconds(2);
-        // charHaruka.SetActive(true);
-        // sigh.Play();
 
     }
 
     
 }
 
-// This Utility lets you invoke functions with parameters
-// https://discussions.unity.com/t/tip-invoke-any-function-with-delay-also-with-parameters/810392
-// 
-public static class Utility
-{
-    public static void Invoke(this MonoBehaviour mb, Action f, float delay)
-    {
-        mb.StartCoroutine(InvokeRoutine(f, delay));
-    }
-
-    private static IEnumerator InvokeRoutine(System.Action f, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        f();
-    }
-}
