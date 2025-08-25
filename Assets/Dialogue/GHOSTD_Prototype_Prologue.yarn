@@ -26,7 +26,7 @@ Narrator: Sleeping, eating, working, money. These things only exist for the joy 
 Narrator: Here in New Life City, a Soul can be anyone and every thing they want to be.
 And so who and what are you?
 //Player goes through Character creation
-<<jump MeetCute1>>
+<<jump PickName>>
 ===
 title: PickName
 position: -263,-83
