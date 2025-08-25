@@ -1,0 +1,576 @@
+title: Declarations
+position: -259,-350
+---
+<<declare $affectionMeter = 0>>
+<<declare $genderObject = "them">>
+<<declare $genderSubject = "They">>
+<<declare $playerName = "You">>
+<<declare $enablePhone = false>>
+<<declare $phoneInteractable = false>>
+<<declare $TutorialGhostdHome = true>>
+<<declare $TutorialGhostdProfile = true>>
+<<declare $TutorialGhostdProphecy = true>>
+<<declare $hideDialogueContinue = false>>
+<<declare $totalObols = 0>>
+<<declare $RemyNameKnown = false>>
+// Obols are based on Charon's Obols. The Coins that would be placed on the eyes or in the mouth of the dead as fare for the passage over the Rivery Styx. (totally down to change names for this and other things later)
+//thinking about keeping track of the affection, romantic, and platonic meters separately. 
+===
+title: Start
+position: -263,-213
+---
+Narrator: New Life City: a bustling metropolis on the other side of eternity. 
+Narrator: Where Souls reside after they’ve traversed the Great Veil and moved from the realm of the living, to the realm of the… not so much. 
+Narrator: But that’s alright. It’s quite nice here.
+Narrator: Sleeping, eating, working, money. These things only exist for the joy of it. No one needs any of that. And so people simply do what makes them happy. 
+Narrator: Here in New Life City, a Soul can be anyone and every thing they want to be.
+And so who and what are you?
+//Player goes through Character creation
+<<jump PickName>>
+===
+title: PickName
+position: -263,-83
+---
+What is your name?
+-> Jamie
+ <<set $playerName to "Jamie">>
+-> Kai
+ <<set $playerName to "Kai">>
+Your name is {$playerName}?
+ -> Yes
+  <<jump PickPronouns>>
+ -> No
+  <<jump PickName>>
+===
+title: PickPronouns
+position: -263,54
+---
+What are your closest pronouns?
+ -> She/Her
+  <<set $genderSubject to "She">>
+  <<set $genderObject to "her">>
+  Your closest pronouns are {$genderSubject}/{$genderObject}?
+   -> Yes
+    <<jump Prologue>>
+   -> No
+    <<jump PickPronouns>>
+   -> Actually, I want to change my name. Let's start over.
+    <<jump PickName>>
+ -> They/Them
+   <<set $genderSubject to "They">>
+   <<set $genderObject to "them">>
+   Your closest pronouns are {$genderSubject}/{$genderObject}?
+    -> Yes
+     <<jump Prologue>>
+    -> No
+     <<jump PickPronouns>>
+    -> Actually, I want to change my name. Let's start over.
+     <<jump PickName>>
+ -> He/Him
+  <<set $genderSubject to "He">>
+  <<set $genderObject to "him">>
+  Your closest pronouns are {$genderSubject}/{$genderObject}?
+   -> Yes
+    <<jump Prologue>>
+   -> No 
+    <<jump PickPronouns>>
+   -> Actually, I want to change my name. Let's start over.
+    <<jump PickName>>
+===
+title: Prologue
+position: -43,-352
+color: green
+---
+<<LoadBackground LivingRoom>>
+Narrator: You awaken from your nap. Even though they aren’t necessary, naps still feel just as good as they did "Back in the Old Days," or "bitod" as they prefer to say here in New Life City.
+{$playerName}: *yawn*
+<<CharacterEnter Malaika>> 
+<<SetEmote Malaika "Happy">>
+Malaika: Hey Sleepydead! 
+ //Could we have "MALAIKA QUARTZ (SHE/HER)" scroll across the screen at his point?
+Narrator: This is Malaika Quartz, your roommate and bestie for as long as you’ve been in New Life City. She is likely a few hundred years older than you; it is hard to know for sure.
+Malaika: Are you still going out with me tonight? I hear Odin’s setting up another big war game up in Las Valhallas. 
+Malaika: You wanna get out for a bit? 
+Malaika: Have a big adventure, stab some peeps, maybe even go out for drinks with them after. 
+{$playerName}: No, I’m good. Even after a hundred times, I still can’t keep up with the Valkyries.
+<<SetEmote Malaika "Neutral">>
+Malaika: Ok, to each their own. You’ll have the apartment to yourself this weekend then.
+<<SetEmote Malaika "Smirk">>
+Malaika: Because I intend to stab the biggest viking I can find; I’m pretty sure that’s how they flirt.
+{$playerName}: You’re talking about Sven?
+<<SetEmote Malaika "Neutral">>
+Malaika: Yep, but they go by 7even now. Said they always wanted to change their name Back In The Old Days. 
+{$playerName}: Great for them!
+<<SetEmote Malaika "Smirk">>
+Malaika: Great for them? Great for me! Now I get to change my name to Nine!
+{$playerName}: You’re ridiculous and you have a problem! 
+Malaika: You mean I’ve got 7even problems! 
+<<SetEmote Malaika "Neutral">>
+Malaika: Anyway, how are you feeling? This is the 3rd time this week you’ve bailed on plans… 
+{$playerName}: I'm sorry Malaika, I've just been feeling so exhausted. You know, I really thought being a Soul  would mean I'd stop feeling tired.
+<<SetEmote Malaika "Happy">>
+Malaika: Did I just hear you say you need a Tarot reading?
+{$playerName}: What? No, I said I really thought- 
+Malaika: I know what you said, {$playerName}.
+<<SetEmote Malaika "Neutral">>
+Malaika:  But that's the thing. Becoming a Soul DOES make you stop feeling tired. So we gotta fugure out what's really messing with your energies.
+ <<SetEmote Malaika "Happy">>
+ Malaika: Come, Rider! Here, Boy!
+// a deck of tarot cards shows up on the screen next to Malaika
+Narrator: Malaika's pet dog made of tarot cards appears before you.
+Rider: Bark!
+ -> Pet Tarot. "Such a good boy! You gonna help me solve my sleeping problem?"
+  <<SetEmote Malaika "Neutral">>
+  Malaika: You don't have a sleeping problem. Real Sleep is "bitod", remember? "Back in the old days?"
+ -> "Still getting used to having a deck of cards for a pet."
+  Malaika: Isn't Rider the Cutest! Just "Waite" till you see what he can do!
+{$playerName}: I don't know, Malaika. I'm probably just pushing myself too hard.
+<<SetEmote Malaika "Neutral">>
+Malaika: Pushing yourself? You're a Soul! What does that even mean?
+Malaika: Listen, {$playerName}. In all the years of our best friendship, have I ever steered you wrong?
+ -> "No, Bestie. I know you know your stuff."
+  Malaika: that's right! So trust me: I've been here for centuries, and Souls only get tired for a few reasons.
+  Malaika: Now let's see what the cards say, and what we can do to fix you up!
+ -> "Three Words. Phasmo-based Cheese."
+  <<SetEmote Malaika "Happy">>
+  Malaika: And I said I was sorry! How was I supposed to foresee that it tasted like grave dirt and regret?
+  Malaika: But speaking of foreseeing...
+  <<SetEmote Malaika "Neutral">>
+Malaika: We're gonna do the Limbo Spread: The Fog, The Tether, The Lantern. Now pick your Fog Card.
+Malaika: The Fog is why you feel the way you do. It's the haze you are in, the confusion you're feeling. It's not the cause, just the atmosphere you are walking through.
+//Player picks a card: Four of Cups. We can determin how we care gonna handle this later. Point and click? choose within the dialogue text box? At this point there isn't much "choice" as much as an opportunity for Player interaction.
+Narrator: You pull the Four of Cups.
+Malaika: Four of Cups. So this is pointing to stagnation, discontent, and a feeling of disconection. 
+Malaika: Babes, you're bored and have no motivation. Something is stopping you from living your best afterlife.
+{$playerName}: I'm bored? How does being bored make you too tired to do stuff? That seems kinda counterintuitive.
+<<SetEmote Malaika "Smirk">>
+Malaika: Yeah, right? But it happens for different reasons. Let's use The Tether to figure out why.
+<<SetEmote Malaika "Neutral">>
+Malaika: The Tether is what's holding you in place. It's the cause of what you're feeling. The thing holding you back, keeping you from walking out of the fog.
+Narrator: You pull The World, Reversed.
+//Player picks a card: The World, Reversed
+{$playerName}: The world turned upside down?
+Malaika: Exactly. The World, Reversed, points to incompletion, and no closure. Being restricted by not letting go.
+ -> "Not letting go? Of what?"
+  <<SetEmote Malaika "Smirk">>
+  Malaika: How should I know, {$playerName}? You gotta figure that part for yourself.
+ -> "I don't need to let go of anything."
+  <<SetEmote Malaika "Neutral">>
+  Malaika: Alright, alright, whatever you say. Rider's just giving you things to consider. 
+  Malaika: Let's atleast look at the last card.
+<<SetEmote Malaika "Neutral">>
+Malaika: The Third and Final Card in the Limbo Spread is "The Lantern." How you move forward. This is the light you can use to burn away the Tether and follow to escape the Fog.
+Narrator: You pull The Three of Wands.
+//Player picks a card: The Three of Wands
+{$playerName}: What does this one mean?
+Malaika: The Three of Wands is about pushing beyond the familiar. It's about seeking new experiences, and exploring the unknown. 
+Malaika: You gotta let your passion, your curiousity, and your confidence lead you to new places. Maybe that's figurative, or maybe it's not.
+<<SetEmote Malaika "Happy">>
+Malaika: Well, that was pretty enlightening, don't you think?
+Malaika: And Rider did such a good job! Didn't you, Rider?! Yes you did cuz your the bestest boy!
+Rider: Bark!
+  <<SetEmote Malaika "Neutral">>
+Malaika: Well, what do you think, {$playerName}?
+ -> "So what exactly am I supposed to do? The solution is vague.""
+  <<SetEmote Malaika "Smirk">>
+  Malaika: Rider doesn't give specific instructions. Imean, he's just a dog.
+ -> "Malaika, I don't buy any of this."
+  <<SetEmote Malaika "Happy">>
+  Malaika: And that's fine. It's just a perspective to view things through. What you believe and what you do is totally up to you.
+Narrator: Another tarot card falls out of Rider's deck. The Death Card.
+//The Card appears on the screen: Death
+-> A little for late that, isn't it?
+ <<SetEmote Malaika "Happy">>
+ Malaika: Haha! No, {$playerName}. It's not like that.
+-> I think your dog has it in for me a second time.
+ <<SetEmote Malaika "Happy">>
+ Malaika: Haha! Nah, {$playerName}. Rider's just trying to give you a little extra encouragement.
+<<SetEmote Malaika "Neutral">>
+Malaika: Fallen Cards can be things to look out for. And the Death Card isn't about dying. Not necessarily. 
+Malaika: Its about transitions, change, and letting go. So it's kinda right in line with the things we've talked about. So keep your eyes open for transitions. 
+Narrator: Transitions. The word rings and settles in your mind.
+Narrator: You are, however, fairly satistied with your afterlife, as far as you can tell.
+Narrator: After all, you finally made a decision on what kind of shop to run... 
+Narrator: ... which was something you were never able to do "bitod."
+Narrator: You have a decent apartment with a great friend who already has a pet, so there was no need to get one of your own....
+Narrator: ...even though a little pet was something you always wanted "bitod."
+//i feel like there should be one more unfulfilled thing, with a reason that Player isn't going after it and also is obstensible content not to
+{$playerName}: Things are just fine.
+Malaika: Alright, I won't fight you on it.
+Malaika: Just promise me you will come out with me sometime next week? I miss hanging out with you, Bestie.
+-> "I miss you too! Alright, let's make plans!"
+-> "Sure, we'll figure it out."
+<<SetEmote Malaika "Happy">>
+Malaika: Even if we just stay home for movies and pizza. I’m thinking Ghost Pepperoni with Blue Olives?
+-> "Sounds delicious!"
+-> We will uhh... Figure that part out too.
+<<SetEmote Malaika "Neutral">>
+Malaika: For sure! But let me let you go! You're gonna be late for work. Kinda... not really.
+{$playerName}: Will you still be here when I get back?
+Malaika: I'll be around a little longer. I'm probably not going to leave until Friday evening. Ooh! You know what? I could spend today solving your boredom problem!
+ -> That sounds like the path of least resistance. I'm excited to hear what you come up with.
+  <<SetEmote Malaika "Happy">>
+  Malaika: Really?! Say less! I won't let you down.
+ -> I already told you. I don't have a boredom problem.
+  <<SetEmote Malaika "Smirk">>
+  Malaika: Sure, Babes. And I don't have 7even problems.
+  <<SetEmote Malaika "Happy">>
+  Malaika: Don't worry, this will be fun. Like, "your" idea of fun! Boring fun!
+{$playerName}: Just don't break anything, okay?
+<<SetEmote Malaika "Smirk">>
+Malaika: You know I can’t promise that. Have a good day at work!
+<<CharacterLeave Malaika>>
+<<jump MeetCute1>>
+===
+title: MeetCute1
+position: -44,-217
+color: green
+---
+<<LoadBackground Cafe>>
+Narrator: You arrive at your little shop precisely on time, as you always do. But that may be more because time is less “sequential” here than it is on Earth. 
+<<declare $todaysObols = 0>>
+Your wallet has a total of {$totalObols} Obols! 
+Pick the best items for you customers and Collect Obols to buy gifts and goods in New Life City. 
+Narrator: Buying isn't necessary and neither is currency, but some Souls find pleasure in "Lifelike Action" role play (LARP).
+Narrator: A Customer walks up to the counter.
+Customer 1: Hey there {$playerName}! Can I get a drink and a pastry? I'm in the mood for something cozy and warm!
+{$playerName}: Coming right up! 
+ -> Iced Coffee. It's Ice... and Coffee.
+  Customer 1: Umm... this isn't really warm, like I asked...
+  {$playerName}: Sorry. how about a Skeletano?
+  You receive way less Obols.
+  <<set $todaysObols +=1>>
+ -> Skeletano. A nice hot beverage perfect for warming the Soul.
+  <<set $todaysObols +=5>>
+  You receive the regular amount of Obols.
+ -> Bottle of Milk. A warm beverage. For babies
+  Customer 1: I mean, i guess.
+  {$playerName}: Sorry. How about a Skeletano?
+  You receive less Obols.
+  <<set $todaysObols +=3>>
+Customer 1: This is perfect! I'm visiting from another borough  on a stressful work trip. 
+Customer 1: But I really wish I could be at home cuddling with my cat.
+ -> Catskull Biscuit. A cute and cozy feline-shaped pastry that really purrks you up!
+  <<set $todaysObols +=5>>
+  You receive the regular amount of Obols.
+ -> Wereclaw. A decadantly textured frsoted pastry that might leave you howling at the moon.
+  Customer 1: I guess feral energy could kinda release stress... Maybe...
+  <<set $todaysObols +=1>>
+  {$playerName}: Sorry. How about a Castkull Biscuit?
+  You receive way less Obols.
+ -> Garlic Cross-ant. A savory t-shaped pastry. Allergy Warnings: Garlic and t-shape.
+  Narrator: The Customer looks shocked and nervous.
+  Customer 1: Omg... you see him too? 
+  {$playerName}: What? No!.. umm.. keep it.
+  {$playerName}: Here's a Castskull Biscuit for you though.
+  <<set $todaysObols +=3>>
+  //You receive less Obols.
+Customer 1: Oh my goodness! This is so cute!
+Customer 1: Thanks, {$playerName}! I'll see you later!
+The Customer leaves.
+<<CharacterEnter Remy>> 
+Customer 2: I'm getting a little dizzy just looking at the menu here. What would you recommend for a first-time customer?
+{$playerName}: Well, that kinda depends, how are you feeling?
+<<SetEmote Remy "Smirk">>
+Customer 2: Tired. Like I wish I had more time.
+ -> Venti Latte with Ornate Spider Web Lace Art. And a Really sticky Sticky Bun. For those with a ton of time on their hands.
+  <<SetEmote Remy "Happy">>
+  Customer 2: Ha, funny! Maybe something that takes a little less time to prepare?
+  You give the customer the Espresso Shot and Donut Holes.
+  <<set $todaysObols +=5>>
+  You still receive the regular amount of Obols.
+ -> Espresso Shot with a dash of Cinnamon-Sugar, and Donut Holes. Quick, fast energy on the go. Like a warm hug on your way out the door.
+  <<set $todaysObols +=5>>
+  You receive the regular amount of Obols.
+<<SetEmote Remy "Smirk">>
+Customer 2: *inhales deeply* This smells incredible. 
+Customer 2: *chuckles* Almost makes me feel alive! 
+<<SetEmote Remy "Happy">>
+Customer 2: Oops. Ha, sorry. Was that too dark?
+ -> "Maybe just a little."
+  <<SetEmote Remy "Neutral">>
+  Customer 2: I'm so sorry. it's been a long night and it's gonna be an even longer night cuz I haven't seen the sun in eons. 
+  <<SetEmote Remy "Smirk">>
+  Customer 2: Wait, is that even darker?
+   -> Yes, but that's kinda funny.
+    <<set $affectionMeter +=1>>
+    <<SetEmote Remy "Happy">>
+    Customer 2: Glad you liked it. So what's your name?
+   -> *roll eyes and smile* "Is there anything else you want, sir?"
+   <<SetEmote Remy "Neutral">>
+    Customer 2: I'd really like to know your name.
+->"Not as dark as that Espresso Shot!"
+  <<set $affectionMeter +=1>>
+  <<SetEmote Remy "Happy">>
+  Customer 2: Yeah, I guess not. But seriously, this was really good. 
+  Customer 2: And the Cinnamon Sugar was a really sweet touch
+  <<SetEmote Remy "Smirk">>
+  Customer 2: I really appreciate it. Thank you.
+   -> *Smile* "You're welcome."
+   <<SetEmote Remy "Neutral">>
+   Customer 2: What's your name?
+   -> "Is there anything else you'd like?"
+   <<SetEmote Remy "Happy">>
+   Customer 2: I'd really like to know your name.
+Tell Him Your Name?
+ -> It's {$playerName}
+  Customer 2: {$playerName}... That's a nice name. it suits you. Well, it was nice meeting you.
+  {$playerName}: You too.
+  <<CharacterLeave Remy>>
+ -> It's {$playerName}. What's yours?
+  <<set $RemyNameKnown to true>>
+  //Could we have "REMY MORI (HE/HIM)" scroll across the screen at his point?
+  <<set $affectionMeter +=2>>
+  Customer 2: I go by Remy. you know, i must have been down this street a thousand times, and i don't think I've ever seen your shop before. Is it new?
+  {$playerName}: Oh they were doing a lot of remodeling in the old Elysium district so I moved the shop to the city’s edge. You live nearby?
+  Remy: I work nearby, actually.
+   -> "Well then you have no excuse not to come back for more coffee."
+    Remy: Absolutely. I'll see you around, {$playerName}.
+    <<CharacterLeave Remy>>
+   -> "Well then you have no excse not to come back to see me."
+    <<set $affectionMeter +=3>>
+    //big smile
+    Remy: Haha, yeah that sounds... really great.
+    Remy: I'll come see you again, {$playerName}.
+    Remy: Take care.
+    <<CharacterLeave Remy>>
+Another Customer walks to the counter.    
+//Customer 3 Enters
+Customer 3: Just give me a Wereclaw please.
+{$playerName}: Sure thing!
+<<set $todaysObols +=2>>
+Customer 3: Thank you.
+The Customer walks away
+<<if $RemyNameKnown is true>>
+ Narrator: The rest of the shift goes by in a blur, because you can’t stop thinking about Remy. 
+ Narrator: A phantom blush fills your cheeks, like something just out of the reach of your memory…
+ Narrator: There’s something about Remy that you can’t quite place. 
+<<else>>
+ Narrator: The rest of the shift goes by normally.
+<<endif>>
+You made {$todaysObols} Obols today!
+<<set $totalObols +=$todaysObols>>
+Your wallet has a total of {$totalObols} Obols!
+// i will reset $todaysObols at the beginning of the next Work Shift.
+You head back to the apartment.
+<<jump AppIntro>>
+===
+title: AppIntro
+position: -46,-71
+color: green
+---
+<<LoadBackground LivingRoom>>
+<<CharacterEnter Malaika>>
+<<SetEmote Malaika "Smirk">>
+Malaika: {$playerName}! Welcome back! And guess whodunnit!
+{$playerName}: Professor Plum in the Library with the Candlestick?
+<<SetEmote Malaika "Neutral">>
+Malaika: What?
+{$playerName}: Nevermind. What've you got for me?
+<<SetEmote Malaika "Smirk">>
+Malaika: Nothin’ much. Just a killer app thats gonna bring new life to your Afterlife.
+{$playerName}: How does that even-
+<<SetEmote Malaika "Happy">>
+Malaika: Focus! It’s called GHOSTD! A Soul-Linking App. You can date or you can make friends. Your choice!
+Malaika: Either way, "people" definitely check the box of expanding your horizons and creating new experiences! So download it and I’ll walk you through!
+<<set $enablePhone to true>>
+<<set $phoneInteractable to true>>
+<<set $hideDialogueContinue to true>>
+Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App 
+<<set $hideDialogueContinue to false>>
+<<set $enablePhone to false>>
+<<SetEmote Malaika "Neutral">>
+Malaika: Check out your matches! Looks like you already have three!
+<<TransitionPhoneToForeground PhoneManager>>
+Player must click on the Matches tab to continue
+//Show First match: Cthulu (He/Him). An Old One
+<<SetEmote Malaika "Neutral">>
+Narrator: A Burly man with Tentacles on his face appears on the screen. He's flexing and looks particulary pleased with himself.
+Bio: I’m an "Old One", looking for new worshippers. My hobbies include battle, going to the beach, and spending time in the presence of other beautiful Souls like you!
+{$playerName}: Yeah, I dont know if I’m ready for that level of devotion just yet.
+Malaika: Facts. Besides, he’s not actually into real connections. He’s been searching for groupies for a couple of decades now. Don’t ask me how I know this. Lets keep looking.
+Narrator: A sort fo quintessential 90's office worker type of person is on screen. They look.. well... Lets just say that "interesting" is certainly "not" the word.
+//Show 2nd Match: Craig Smith (they/he) 
+Bio: "It's safe to say that I'm relatively content with my simple job, my simple home, and my simple life. But now I'm looking for someone simple I can come home to. I don't enjoy complex things or complex people, to put it simply."
+Malaika: Boo. This one’s soooo boring.
+ -> You don't know, he could be nice.
+  <<SetEmote Malaika "Smirk">>
+  Malaika: Babez, He teaches finance in a world with no money. No. 
+  Malaika: This is why you have a boredom problem. Next!
+ -> You're right, he "simply" won't do.
+  <<SetEmote Malaika "Happy">>
+  Malaika: Good one! Let's look at the last match. Fingers Crossed!
+<<SetEmote Malaika "Neutral">>
+// Show Third Match: Remy (he/him) #meta
+Narrator: A handsome young-looking man appears on your screen. The customer from the cafe.
+Bio: I’m looking for someone to haunt. 
+Bio: Just kidding. Unless puns, affection, snacks, and deep convo at 3am are kinda spooky to you. 
+Bio: I’m somewhat of an Afterlife Coach. Just helping Souls do what they gotta do and go where they gotta go, you know?
+Bio: I break a lot of dress codes at work, but somebody’s gotta after-liven up the place. I love my job, but I’d love to love someone more… 
+Bio: So if you’re into midnight walks, a little bit of dusk humor, and dressing cats in cute bow ties, hit me up sometime. 
+Bio: No rush, we’ve got forever.
+<<SetEmote Malaika "Happy">>
+Malaika: Okay now we’re getting somewhere. He’s fun. He’s up front about his job. This is a green flag if I’ve ever seen one.
+ -> He sounds really nice!
+  <<SetEmote Malaika "Smirk">>
+  Malaika: And super cute too! Helheim, if you don’t message him, maybe I will!
+  <<SetEmote Malaika "Happy">>
+  Malaika: I’m kidding… sort of! Oh my gods, {$playerName} just message him!
+  {$playerName}: Alright Alright
+ -> Wait! I know him! I met him at work today.
+  Malaika: Ooooooh. And he matched with you the same day? You have to message him right now!
+{$playerName}: But what do I say?
+<<SetEmote Malaika "Neutral">>
+//Changed it to Date-Diviners (instead of Datevinators) because the Date Everything ganme calls those glasses "Dateviators. It feel thats too close"
+Malaika: Here, Ghosted has a “Prophecy” option. They have Date Diviners for people like you who don’t know how to flirt. 
+ -> I know how to flirt. 
+  <<SetEmote Malaika "Happy">>
+  Malaika: Well, look at you! Well then you should have no problem convincing him to go on a date with you.
+  Malaika: But just in case you need a little extra help…
+ -> I feel so seen and called out at the same time
+  <<SetEmote Malaika "Happy">>
+  Malaika: That's what I'm here for, Babez! 
+<<SetEmote Malaika "Neutral">>
+<<LoadPhoneScreen PhoneManager "Prophecies Screen">>
+Malaika: While you can totally win hearts with them, the advice The Prophecies give you is guaranteed to make your dates more successful… so long as you can interpret them. 
+Malaika: Here, just click on his picture and then hit Prophecy.
+//Player selects Prophecy
+{$playerName}: Bid your date come meet you near, thine province that thou holdest dear. Offer forth thou drinks of spice. Thine prowess shall then break the ice.
+{$playerName}: Hmm...
+<<SetEmote Malaika "Happy">>
+Malaika: Lucky pull! You got an easy one. This is just saying you should invite him to your shop.
+{$playerName}: And you said this advice is guaranteed?
+Malaika: Absolutely! My first roommate when I arrived here was a Date Diviner. 
+<<SetEmote Malaika "Neutral">>
+Malaika: I was pretty skeptical about the whole “divination for dates” thing at first, so she offered to wingman for me as proof. 
+Malaika: And, well… let’s just say that I’m a believer now.
+{$playerName}: Skeptical? Says the lady with the Tarot Dog.
+<<SetEmote Malaika "Happy">>
+Malaika:*playfully* Hey! Just because you believe in one thing, doesn’t mean you believe in everything!
+Malaika: Besides! Look at that little guy! He’s just so cute!
+Rider: Bark!
+<<SetEmote Malaika "Neutral">>
+{$playerName}: So what, I just… ask him to meet up at the shop?
+Malaika: Seems so. Again, you got kinda lucky with this first prophecy, usually they are much harder to figure out than this. 
+Malaika: See the second couplet? That’s saying you should tell him about your coffee… Or maybe the tea? 
+Malaika: Whichever one you consider to be your “prowess.” These Prophecies can get nebulous pretty fast.
+{$playerName}: Well, here goes I guess.
+// <<LoadBackground MessagingApp>>
+// ^ i added this for you, maybe we can make it a command?
+<<HidePhone PhoneManager>>
+<<CharacterLeave Malaika>>
+Narrator: You text Remy.
+//Player pulls up the messaging app, or calls Remy or whatever we plan to do for this moment.(maybe the messaging is within the app instead of the phone. The characters are testing in this moment.) #meta
+<<CharacterEnter Remy>>
+{$playerName}: Hey Remy! Remember me?
+<<if $affectionMeter >=5>>
+ <<jump Above5>>
+<<else>>
+ <<jump Below5>>
+<<endif>>
+=== 
+title: Above5
+---
+<<SetEmote Remy "Happy">>
+Remy: Of course I do. You’re the one who gave me that warm hug on the way 
+{$playerName}: Wait, what hug?
+<<SetEmote Remy "Neutral">>
+Remy: The Espresso, with the cinnamon sugar. It was nice.
+Remy: So I see we matched…
+ -> Yeah, I feel like we really made a connection, and I want a chance to get to know you. (Flirt)
+  <<set $affectionMeter +=1>>
+  <<SetEmote Remy "Happy">>
+  Remy: You felt that too, huh? I’m glad to meet someone else who knows what they want.
+   -> Speaking of what I want, do you want to meet up at Wake the Dead tomorrow?
+   -> Is that so? Well, what is it that "you" want?
+    <<set $affectionMeter +=1>>
+    <<SetEmote Remy "Smirk">>
+    Remy: Pick a time and place and I could tell you in person.
+    {$playerName}: How about Tomorrow? Wake the Dead?
+ -> I’m looking to make new friends, and I think we really made a connection! (Just Friends)
+  <<SetEmote Remy "Happy">>
+  Remy: Honestly, that sounds great. I’m down to make friends too.
+  {$playerName}: Do you wanna meet up tomorrow at Wake The Dead?
+<<jump FirstDatePlan>>
+===
+title: Below5
+---
+<<SetEmote Remy "Happy">>
+Remy: Of course! But I have to admit... Lol, I didn't think you were that into me. 
+ -> Gaslight him. (Playfully)in
+  {$playerName}: What are you talking about? I think we really made a connection!
+  <<SetEmote Remy "Smirk">>
+  Remy: Man, my carbon monoxide monitor is going off. Is there a "gaslight" leak in here? :p
+  {$playerName}: Haha, ok fair. But I wanna get to know you.
+  <<SetEmote Remy "Happy">> 
+  Remy: Oh, I’m funny and you like me? I’ll take it ✨
+  {$playerName}: I didn’t say I like you. I said I wanna get to know you.
+  <<SetEmote Remy "Smirk">>
+  Remy: I fail to see the difference. We should meet up and you can explain it to me.
+   -> How about tomorrow at the Wake the Dead?
+   -> Smooth. How about tomorrow at the Wake the Dead?
+    <<set $affectionMeter +=1>>
+ -> I liked you're profile. You seem interesting.
+  Remy: Oh you like me and you think I’m interesting huh? I’ll take it. ✨
+  {$playerName}: I said your profile
+  <<SetEmote Remy "Smirk">>
+  Remy: I fail to see the difference. We should meet up and you can explain it to me.
+   -> How about tomorrow at the Wake the Dead?
+   -> Smooth. How about tomorrow at the Wake the Dead?
+    <<set $affectionMeter +=1>>
+ -> You're not wrong... I’m just looking to make new friends right now. And you seem cool. (Just Friends)
+  <<SetEmote Remy "Happy">>
+  Remy: That's fair. Honestly that sounds great. I’m down to make friends too.
+  {$playerName}: Do you wanna meet up tomorrow at Wake The Dead?
+<<jump FirstDatePlan>>
+===
+title: FirstDatePlan
+---
+<<SetEmote Remy "Neutral">>
+Remy: Sounds good to me. But isn’t that where you work?
+ -> Well, and this is kind of embarrassing, I maaaay have used the Datevination feature on here. (- Affection)
+  <<set $affectionMeter -=2>>
+  Remy: Oh... okay I guess.
+ -> What better way to get to know me? I spend a lot of time here. (+ Affection)
+  <<SetEmote Remy "Smirk">>
+  <<set $affectionMeter +=5>>
+  Remy: That's fair!
+  {$playerName}: And I’ll get to know you too. You’d be surprised how much you can learn about someone from their coffee order.
+  <<SetEmote Remy "Happy">>
+  Remy: Haha, what does it say about you that you have all the coffee?
+   -> Don’t read too much into it!
+    Remy: Only if you don’t either. See you tomorrow.
+    <<CharacterLeave Remy>>
+   -> I’ll meet you tomorrow and you can tell me
+    <<set $affectionMeter +=2>>
+    <<SetEmote Remy "Smirk">>
+    Remy: Touche’. See you tomorrow.
+ -> Because I make a killer cup of coffee. (Prophecy Answer. + Affection x2)
+  <<set $affectionMeter +=10>>
+  <<SetEmote Remy "Neutral">>
+  Remy: is that so?
+  {$playerName}: I decided to spend my afterlife running the sort of shop I always dreamed of before I got here. Or… atleast part of it…
+  {$playerName}: And it just so happens to be the sort of place I would bring someone I liked.
+  <<SetEmote Remy "Smirky">>
+  Remy: Again with the like! I dunno, we might be moving a little fast here...
+  <<SetEmote Remy "Neutral">>
+  Remy: Seriously though I would love to, I’ll see you there. 
+{$playerName}: If you don’t mind me asking, why did you want to know?
+<<SetEmote Remy "Neutral">>
+Remy: I guess I just found it odd wanting to bring someone to where you work.
+{$playerName}: Oh really? I thought that would be more common here in New Life City where everyone gets to kind of make up what they want to do.
+Remy: Not everyone gets it right I’ve found, sometimes you think you know how you’re going to spend eternity and then suddenly it’s not what you expected. 
+Remy: But it sounds like you really nailed it. What time should I meet you?
+{$playerName}: I close up in the early afternoon, so around then? 
+{$playerName}: We’ll have the place to ourselves and I can make you anything off the menu before I clean all the machines.
+Remy: I can do that. I have to do something in the morning, so depending on how I navigate the flux I may be a bit late or a bit early. 
+<<SetEmote Remy "Happy">>
+Remy: But I promise I’ll be there.
+ -> I'll hold you to that. See you tomorrow!
+  Remy: See ya, {$playerName}
+  <<CharacterLeave Remy>>
+ -> Alright, but if you leave me waiting you’ll need to make it up to me!
+  <<SetEmote Remy "Smirk">>
+  Remy: Yet "another" chance to see you? Sign me up.
+  <<CharacterLeave Remy>>
+===
