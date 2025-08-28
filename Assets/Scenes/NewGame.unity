@@ -716,6 +716,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2417686253960058668, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
+      propertyPath: nextLineKeyCode
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417686253960058668, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
+      propertyPath: hurryUpLineKeyCode
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2448768297859495229, guid: e6be8dad3bb398c48a1c65d938270528, type: 3}
       propertyPath: m_Sprite
       value: 
