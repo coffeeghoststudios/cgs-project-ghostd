@@ -113,7 +113,7 @@ Malaika: Did I just hear you say you need a Tarot reading?
 {$playerName}: What? No, I said I really thought- 
 Malaika: I know what you said, {$playerName}.
 <<SetEmote Malaika "Neutral">>
-Malaika:  But that's the thing. Becoming a Soul DOES make you stop feeling tired. So we gotta fugure out what's really messing with your energies.
+Malaika:  But that's the thing. Becoming a Soul DOES make you stop feeling tired. So we gotta figure out what's really messing with your energies.
  <<SetEmote Malaika "Happy">>
  Malaika: Come, Rider! Here, Boy!
 // a deck of tarot cards shows up on the screen next to Malaika
@@ -173,13 +173,13 @@ Rider: Bark!
 Malaika: Well, what do you think, {$playerName}?
  -> "So what exactly am I supposed to do? The solution is vague.""
   <<SetEmote Malaika "Smirk">>
-  Malaika: Rider doesn't give specific instructions. Imean, he's just a dog.
+  Malaika: Rider doesn't give specific instructions. I mean, he's just a dog.
  -> "Malaika, I don't buy any of this."
   <<SetEmote Malaika "Happy">>
   Malaika: And that's fine. It's just a perspective to view things through. What you believe and what you do is totally up to you.
 Narrator: Another tarot card falls out of Rider's deck. The Death Card.
 //The Card appears on the screen: Death
--> A little for late that, isn't it?
+-> A little too late for that, isn't it?
  <<SetEmote Malaika "Happy">>
  Malaika: Haha! No, {$playerName}. It's not like that.
 -> I think your dog has it in for me a second time.
@@ -230,7 +230,7 @@ color: green
 Narrator: You arrive at your little shop precisely on time, as you always do. But that may be more because time is less “sequential” here than it is on Earth. 
 <<declare $todaysObols = 0>>
 Your wallet has a total of {$totalObols} Obols! 
-Pick the best items for you customers and Collect Obols to buy gifts and goods in New Life City. 
+Pick the best items for your customers and Collect Obols to buy gifts and goods in New Life City. 
 Narrator: Buying isn't necessary and neither is currency, but some Souls find pleasure in "Lifelike Action" role play (LARP).
 Narrator: A Customer walks up to the counter.
 Customer 1: Hey there {$playerName}! Can I get a drink and a pastry? I'm in the mood for something cozy and warm!
@@ -253,7 +253,7 @@ Customer 1: But I really wish I could be at home cuddling with my cat.
  -> Catskull Biscuit. A cute and cozy feline-shaped pastry that really purrks you up!
   <<set $todaysObols +=5>>
   You receive the regular amount of Obols.
- -> Wereclaw. A decadantly textured frsoted pastry that might leave you howling at the moon.
+ -> Wereclaw. A decadantly textured frosted pastry that might leave you howling at the moon.
   Customer 1: I guess feral energy could kinda release stress... Maybe...
   <<set $todaysObols +=1>>
   {$playerName}: Sorry. How about a Castkull Biscuit?
@@ -432,7 +432,7 @@ Malaika: Here, Ghosted has a “Prophecy” option. They have Date Diviners for 
   Malaika: That's what I'm here for, Babez! 
 <<SetEmote Malaika "Neutral">>
 <<LoadPhoneScreen PhoneManager "Prophecies Screen">>
-Malaika: While you can totally win hearts with them, the advice The Prophecies give you is guaranteed to make your dates more successful… so long as you can interpret them. 
+Malaika: While you can totally win hearts with them, the advice The Prophecies given to you is guaranteed to make your dates more successful… so long as you can interpret them. 
 Malaika: Here, just click on his picture and then hit Prophecy.
 //Player selects Prophecy
 {$playerName}: Bid your date come meet you near, thine province that thou holdest dear. Offer forth thou drinks of spice. Thine prowess shall then break the ice.
@@ -461,6 +461,7 @@ Malaika: Whichever one you consider to be your “prowess.” These Prophecies c
 <<CharacterLeave Malaika>>
 Narrator: You text Remy.
 //Player pulls up the messaging app, or calls Remy or whatever we plan to do for this moment.(maybe the messaging is within the app instead of the phone. The characters are testing in this moment.) #meta
+<<LoadBackground TextBackground>>
 <<CharacterEnter Remy>>
 {$playerName}: Hey Remy! Remember me?
 <<if $affectionMeter >=5>>
@@ -573,4 +574,5 @@ Remy: But I promise I’ll be there.
   <<SetEmote Remy "Smirk">>
   Remy: Yet "another" chance to see you? Sign me up.
   <<CharacterLeave Remy>>
+End of demo
 ===
