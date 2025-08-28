@@ -42,6 +42,7 @@ public enum LocationType
     Chthonia,
     LivingRoom,
     Cafe,
+    TextBackground
 }
 
 [Serializable]
