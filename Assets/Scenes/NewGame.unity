@@ -466,10 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -521,6 +521,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &653676288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613275283160884780, guid: d9f32e6198b1f0d4db894b768d886ba4, type: 3}
+  m_PrefabInstance: {fileID: 1895154340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792756850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,10 +1491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1964,7 +1969,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7613275283160884780, guid: d9f32e6198b1f0d4db894b768d886ba4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1895154346}
   m_SourcePrefab: {fileID: 100100000, guid: d9f32e6198b1f0d4db894b768d886ba4, type: 3}
 --- !u!224 &1895154341 stripped
 RectTransform:
@@ -1976,6 +1984,18 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 774699786327237297, guid: d9f32e6198b1f0d4db894b768d886ba4, type: 3}
   m_PrefabInstance: {fileID: 1895154340}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1895154346
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653676288}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2005791204
 PrefabInstance:
   m_ObjectHideFlags: 0
