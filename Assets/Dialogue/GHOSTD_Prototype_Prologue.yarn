@@ -27,7 +27,7 @@ Narrator: Sleeping, eating, working, money. These things only exist for the joy 
 Narrator: Here in New Life City, a Soul can be anyone and every thing they want to be.
 And so who and what are you?
 //Player goes through Character creation
-<<jump PickName>>
+<<jump AppIntro>>
 ===
 title: PickName
 position: -263,-83
@@ -377,6 +377,7 @@ Malaika: Either way, "people" definitely check the box of expanding your horizon
 <<set $enablePhone to true>>
 <<set $phoneInteractable to true>>
 <<set $hideDialogueContinue to true>>
+<<LoadPhoneScreen PhoneManager "Ghostd Login">>
 Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App
 <<if $IsPhoneHidden is true>>
 <<ShowPhone PhoneManager>>

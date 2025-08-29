@@ -154,7 +154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2541861174427442531, guid: 670bcb2e57d95bb47848cd73fd61c3a1, type: 3}
       propertyPath: m_Volume
-      value: 0.06
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2541861174427442531, guid: 670bcb2e57d95bb47848cd73fd61c3a1, type: 3}
       propertyPath: m_audioClip
