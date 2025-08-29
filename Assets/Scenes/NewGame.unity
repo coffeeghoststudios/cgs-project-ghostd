@@ -152,6 +152,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2541861174427442531, guid: 670bcb2e57d95bb47848cd73fd61c3a1, type: 3}
+      propertyPath: m_Volume
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541861174427442531, guid: 670bcb2e57d95bb47848cd73fd61c3a1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3537066952830e4c8b6653273b8d9b7, type: 3}
     - target: {fileID: 5005542852485941785, guid: 670bcb2e57d95bb47848cd73fd61c3a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 902.6859
