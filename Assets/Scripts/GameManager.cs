@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+
         runner.VariableStorage.TryGetValue<bool>("$hideDialogueContinue", out var hideContBtn);
         if (hideContBtn)
         {
@@ -50,6 +56,12 @@ public class GameManager : MonoBehaviour
             contBtn.interactable = true;
             contBtnImg.enabled = true;
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit game requested");
     }
 
     public Location GetCurrentLocation()

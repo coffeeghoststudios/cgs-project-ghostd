@@ -140,6 +140,7 @@ Malaika: Listen, {$playerName}. In all the years of our best friendship, have I 
 Malaika: We're gonna do the Limbo Spread: The Fog, The Tether, The Lantern. Now pick your Fog Card.
 Malaika: The Fog is why you feel the way you do. It's the haze you are in, the confusion you're feeling. It's not the cause, just the atmosphere you are walking through.
 //Player picks a card: Four of Cups. We can determin how we care gonna handle this later. Point and click? choose within the dialogue text box? At this point there isn't much "choice" as much as an opportunity for Player interaction.
+<<ShowFourOfCups TarotDeck>>
 Narrator: You pull the Four of Cups.
 Malaika: Four of Cups. So this is pointing to stagnation, discontent, and a feeling of disconection. 
 Malaika: Babes, you're bored and have no motivation. Something is stopping you from living your best afterlife.
@@ -150,6 +151,7 @@ Malaika: Yeah, right? But it happens for different reasons. Let's use The Tether
 Malaika: The Tether is what's holding you in place. It's the cause of what you're feeling. The thing holding you back, keeping you from walking out of the fog.
 Narrator: You pull The World, Reversed.
 //Player picks a card: The World, Reversed
+<<ShowWorld TarotDeck>>
 {$playerName}: The world turned upside down?
 Malaika: Exactly. The World, Reversed, points to incompletion, and no closure. Being restricted by not letting go.
  -> "Not letting go? Of what?"
@@ -163,6 +165,7 @@ Malaika: Exactly. The World, Reversed, points to incompletion, and no closure. B
 Malaika: The Third and Final Card in the Limbo Spread is "The Lantern." How you move forward. This is the light you can use to burn away the Tether and follow to escape the Fog.
 Narrator: You pull The Three of Wands.
 //Player picks a card: The Three of Wands
+<<ShowThreeOfWands TarotDeck>>
 {$playerName}: What does this one mean?
 Malaika: The Three of Wands is about pushing beyond the familiar. It's about seeking new experiences, and exploring the unknown. 
 Malaika: You gotta let your passion, your curiousity, and your confidence lead you to new places. Maybe that's figurative, or maybe it's not.
@@ -170,7 +173,8 @@ Malaika: You gotta let your passion, your curiousity, and your confidence lead y
 Malaika: Well, that was pretty enlightening, don't you think?
 Malaika: And Rider did such a good job! Didn't you, Rider?! Yes you did cuz your the bestest boy!
 Rider: Bark!
-  <<SetEmote Malaika "Neutral">>
+<<SetEmote Malaika "Neutral">>
+<<HideDeck TarotDeck>>
 Malaika: Well, what do you think, {$playerName}?
  -> "So what exactly am I supposed to do? The solution is vague.""
   <<SetEmote Malaika "Smirk">>
@@ -180,6 +184,7 @@ Malaika: Well, what do you think, {$playerName}?
   Malaika: And that's fine. It's just a perspective to view things through. What you believe and what you do is totally up to you.
 Narrator: Another tarot card falls out of Rider's deck. The Death Card.
 //The Card appears on the screen: Death
+<<ShowDeath TarotDeck>>
 -> A little too late for that, isn't it?
  <<SetEmote Malaika "Happy">>
  Malaika: Haha! No, {$playerName}. It's not like that.
@@ -198,6 +203,7 @@ Narrator: ...even though a little pet was something you always wanted "bitod."
 //i feel like there should be one more unfulfilled thing, with a reason that Player isn't going after it and also is obstensible content not to
 {$playerName}: Things are just fine.
 Malaika: Alright, I won't fight you on it.
+<<HideDeck TarotDeck>>
 Malaika: Just promise me you will come out with me sometime next week? I miss hanging out with you, Bestie.
 -> "I miss you too! Alright, let's make plans!"
 -> "Sure, we'll figure it out."
