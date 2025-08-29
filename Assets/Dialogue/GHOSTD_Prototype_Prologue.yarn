@@ -557,7 +557,7 @@ Remy: Sounds good to me. But isn’t that where you work?
   Remy: is that so?
   {$playerName}: I decided to spend my afterlife running the sort of shop I always dreamed of before I got here. Or… atleast part of it…
   {$playerName}: And it just so happens to be the sort of place I would bring someone I liked.
-  <<SetEmote Remy "Smirky">>
+  <<SetEmote Remy "Smirk">>
   Remy: Again with the like! I dunno, we might be moving a little fast here...
   <<SetEmote Remy "Neutral">>
   Remy: Seriously though I would love to, I’ll see you there. 
