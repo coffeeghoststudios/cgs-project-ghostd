@@ -25,6 +25,8 @@
 
 /Assets/Samples*
 
+_build_Windows/cgs-project-ghostd_Data
+
 # Visual Studio cache directory
 .vs/
 
