@@ -6,6 +6,7 @@ position: -259,-350
 <<declare $genderSubject = "They">>
 <<declare $playerName = "You">>
 <<declare $enablePhone = false>>
+<<declare $IsPhoneHidden = true>>
 <<declare $phoneInteractable = false>>
 <<declare $TutorialGhostdHome = true>>
 <<declare $TutorialGhostdProfile = true>>
@@ -376,7 +377,10 @@ Malaika: Either way, "people" definitely check the box of expanding your horizon
 <<set $enablePhone to true>>
 <<set $phoneInteractable to true>>
 <<set $hideDialogueContinue to true>>
-Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App 
+Hit "E" on your keyboard to open the phone menu. Then click the Ghostd App
+<<if $IsPhoneHidden is true>>
+<<ShowPhone PhoneManager>>
+<<endif>> 
 <<set $hideDialogueContinue to false>>
 <<set $enablePhone to false>>
 <<SetEmote Malaika "Neutral">>

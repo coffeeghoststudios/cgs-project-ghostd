@@ -24,16 +24,25 @@ public class PhoneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             runner.VariableStorage.TryGetValue<bool>("$enablePhone", out var enablePhone);
-            if(!enablePhone)return;
+            if (!enablePhone) return;
             bool isHidden = anim.GetBool("isHidden");
             anim.SetBool("isHidden", !isHidden);
+            runner.VariableStorage.SetValue("$IsPhoneHidden", !isHidden);
         }
     }
+
+
 
     [YarnCommand("HidePhone")]
     public void HidePhone()
     {
         anim.SetBool("isHidden", true);
+    }
+
+    [YarnCommand("ShowPhone")]
+    public void ShowPhone()
+    {
+        anim.SetBool("isHidden", false);
     }
 
     [YarnCommand("PhoneToForeground")]
