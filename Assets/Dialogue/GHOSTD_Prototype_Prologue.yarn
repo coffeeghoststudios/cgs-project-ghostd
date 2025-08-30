@@ -20,11 +20,11 @@ position: -259,-350
 title: Start
 position: -263,-213
 ---
-Narrator: New Life City: a bustling metropolis on the other side of eternity. 
+Narrator: Chthonia: a bustling metropolis on the other side of eternity. 
 Narrator: Where Souls reside after they’ve traversed the Great Veil and moved from the realm of the living, to the realm of the… not so much. 
 Narrator: But that’s alright. It’s quite nice here.
 Narrator: Sleeping, eating, working, money. These things only exist for the joy of it. No one needs any of that. And so people simply do what makes them happy. 
-Narrator: Here in New Life City, a Soul can be anyone and every thing they want to be.
+Narrator: Here in Chthonia, a Soul can be anyone and every thing they want to be.
 And so who and what are you?
 //Player goes through Character creation
 <<jump PickName>>
@@ -83,13 +83,13 @@ position: -43,-352
 color: green
 ---
 <<LoadBackground LivingRoom>>
-Narrator: You awaken from your nap. Even though they aren’t necessary, naps still feel just as good as they did "Back in the Old Days," or "bitod" as they prefer to say here in New Life City.
+Narrator: You awaken from your nap. Even though they aren’t necessary, naps still feel just as good as they did "Back in the Old Days," or "bitod" as they prefer to say here in Chthonia.
 {$playerName}: *yawn*
 <<CharacterEnter Malaika>> 
 <<SetEmote Malaika "Happy">>
 Malaika: Hey Sleepydead! 
  //Could we have "MALAIKA QUARTZ (SHE/HER)" scroll across the screen at his point?
-Narrator: This is Malaika Quartz, your roommate and bestie for as long as you’ve been in New Life City. She is likely a few hundred years older than you; it is hard to know for sure.
+Narrator: This is Malaika Quartz, your roommate and bestie for as long as you’ve been in Chthonia. She is likely a few hundred years older than you; it is hard to know for sure.
 Malaika: Are you still going out with me tonight? I hear Odin’s setting up another big war game up in Las Valhallas. 
 Malaika: You wanna get out for a bit? 
 Malaika: Have a big adventure, stab some peeps, maybe even go out for drinks with them after. 
@@ -237,7 +237,7 @@ color: green
 Narrator: You arrive at your little shop precisely on time, as you always do. But that may be more because time is less “sequential” here than it is on Earth. 
 <<declare $todaysObols = 0>>
 Your wallet has a total of {$totalObols} Obols! 
-Pick the best items for your customers and Collect Obols to buy gifts and goods in New Life City. 
+Pick the best items for your customers and Collect Obols to buy gifts and goods in Chthonia. 
 Narrator: Buying isn't necessary and neither is currency, but some Souls find pleasure in "Lifelike Action" role play (LARP).
 Narrator: A Customer walks up to the counter.
 Customer 1: Hey there {$playerName}! Can I get a drink and a pastry? I'm in the mood for something cozy and warm!
@@ -570,7 +570,7 @@ Remy: Sounds good to me. But isn’t that where you work?
 {$playerName}: If you don’t mind me asking, why did you want to know?
 <<SetEmote Remy "Neutral">>
 Remy: I guess I just found it odd wanting to bring someone to where you work.
-{$playerName}: Oh really? I thought that would be more common here in New Life City where everyone gets to kind of make up what they want to do.
+{$playerName}: Oh really? I thought that would be more common here in Chthonia where everyone gets to kind of make up what they want to do.
 Remy: Not everyone gets it right I’ve found, sometimes you think you know how you’re going to spend eternity and then suddenly it’s not what you expected. 
 Remy: But it sounds like you really nailed it. What time should I meet you?
 {$playerName}: I close up in the early afternoon, so around then? 
